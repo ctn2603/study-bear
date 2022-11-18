@@ -13,7 +13,7 @@ function App() {
             <div id = "horizantalDiv">
               <Map/>
             </div>
-            <button id = "plusButton" onClick={doSomething}> + </button>
+            <button id = "plusButton"> + </button>
           </div>  
       </div>
     );
