@@ -6,15 +6,8 @@ function App() {
  
     return (
       <div className="App">
-        <Navbar/>
-          <div id = "headerDiv"> 
-            <h1 id="mainHeader">welcome to <i>appnamehere</i>.</h1>
-            <p> a website designed to help Berkeley students to find study groups across campus.</p>
-            <div id = "horizantalDiv">
-              
-            </div>
-            <button id = "plusButton"> + </button>
-          </div>  
+
+        <HomePage />
       </div>
     );
 }
