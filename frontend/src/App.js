@@ -11,7 +11,7 @@ function App() {
             <h1 id="mainHeader">welcome to <i>appnamehere</i>.</h1>
             <p> a website designed to help Berkeley students to find study groups across campus.</p>
             <div id = "horizantalDiv">
-              <Map/>
+              <MapContainer height = "300px" width = "300px"/>
             </div>
             <button id = "plusButton"> + </button>
           </div>  
