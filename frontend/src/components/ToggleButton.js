@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import '../css/ToggleButton.css';
+
 
 let counter = 0;
 const ToggleButton = (props) => {

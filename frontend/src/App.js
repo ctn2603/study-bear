@@ -11,7 +11,11 @@ function App() {
             <h1 id="mainHeader">welcome to <i>appnamehere</i>.</h1>
             <p> a website designed to help Berkeley students to find study groups across campus.</p>
             <div id = "horizantalDiv">
-              <MapContainer height = "300px" width = "300px"/>
+            export default () => (
+  <Popup trigger={<button> Trigger</button>} position="right center">
+    <div>Popup content here !!</div>
+  </Popup>
+);
             </div>
             <button id = "plusButton"> + </button>
           </div>  
