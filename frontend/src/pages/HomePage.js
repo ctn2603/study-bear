@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import Navbar from '../components/Navbar'
+import NavbarExample from '../components/Navbar'
+import MapContainer from '../components/mapGoogle.jsx'
 function HomePage() {
 
     return (
-        <Navbar />
+        <>
+            <NavbarExample />
+            <MapContainer height='50vh' width='50%'/>
+        </>
     )
 }
 

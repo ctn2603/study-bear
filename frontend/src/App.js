@@ -1,12 +1,9 @@
-import './App.css';
-import Navbar from "./Components/Navbar";
-import Map from "./Components/Map";
-
+import './css/App.css';
+import HomePage from "./pages/HomePage.js"
 function App() {
  
     return (
       <div className="App">
-
         <HomePage />
       </div>
     );
