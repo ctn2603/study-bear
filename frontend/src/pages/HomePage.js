@@ -20,7 +20,17 @@ function HomePage() {
             <Flex justifyContent='center'>
                 <MapContainer height='75vh' width='50%'/>
 
-                {/* EventData is a placeholder for EventContainer*/}
+                {/* EventData is a placeholder for EventContainer
+                    This Component will change when switching between:
+                    
+                    -showing list of events
+                    -showing Individual event data
+                    -component for creating an event
+                    -probably more to come
+
+                    *important note: make sure the above components follow the same
+                    height/width parameters, which are passed in as props like below.
+                */}
                 <EventData height='75vh' width='30%'/>
             </Flex>
             
