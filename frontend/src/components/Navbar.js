@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from "./books.png";
+import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
-
+import '../css/ToggleButton.css'
  
 console.log(logo); 
 
