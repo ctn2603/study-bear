@@ -1,5 +1,9 @@
 import { Box, Text, Flex, Center} from '@chakra-ui/react'
+/* 
+    TODO:
+        make this more resizable
 
+*/
 function EventData({height, width}) {
     const data = {
         title:'CS 70 Study Group',

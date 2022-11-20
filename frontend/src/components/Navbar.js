@@ -3,7 +3,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
 import '../css/ToggleButton.css'
- 
+
+/* 
+  this kind of broke for some reason.
+  Can you fix it lmao
+  -Manuel
+*/
+
 console.log(logo); 
 
 function NavbarExample() {
