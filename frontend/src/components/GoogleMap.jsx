@@ -4,40 +4,28 @@ import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
 
 /* tutorial:
     https://medium.com/@allynak/how-to-use-google-map-api-in-react-app-edb59f64ac9d
+
+   Style Documentation:
+   https://react-google-maps-api-docs.netlify.app/
+
+   Fixing the centering issue:
+   https://stackoverflow.com/questions/68425883/how-can-i-get-the-current-map-center-coordinates-using-getcenter-in-react-googl
 */
 
-const MapContainer = ({height, width}) => {
+const GMap = ({height, width, setEvent, setActiveBoxData}) => {
   
   const [boxID, setBoxID] = useState(null);
+
   const [boxOpen, setOpen] = useState(false)
   
-  const makeBox = (id, lat, lng) => {
-  
-    
-    let pos = {lat: lat, lng: lng}
-    const options = { closeBoxURL: '', enableEventPropagation: true };
-    
 
-    if (id === boxID) {
-
-      return (
-        
-          <InfoWindowF position={pos} options={options} style={{padding: '1px !important'}} >
-            <Box>
-              <Text bg='#2bdde3' color='white' p='10' fontSize='20' mb='0' w='30' borderRadius='20'>Bob's Study Group</Text>
-              <Flex>
-                <Text bg='#2a5ade' color='white' fontSize='10' w='44%' mt='4' mb='4' borderRadius='10' p='4' style={{display:'inline-block'}} >2:30PM - 5:00PM</Text>
-                <Spacer />
-                <Text bg='#de1f6b' color='white' fontSize='10' w='44%' mt='4' mb='4' borderRadius='10' p='4' style={{display:'inline-block'}} >Cap: 8/10</Text>
-              </Flex>
-              <Text bg='#6255c2' color='white' p='4' fontSize='10' mt='0' w='30' borderRadius='10'>MainStacks Level:C</Text>
-              
-            </Box>
-          </InfoWindowF>
-       
-      )
-    }
+  const setEventAndId = (pinData, e) => {
+    setActiveBoxData(pinData)
+    setEvent(e)
+    console.log('x: ', e.pixel.x, ' y: ', e.pixel.y)
+    console.log(e)
   }
+
 
   const pinLocations = [
     {id: 1, lat: 37.872024, lng: -122.260579},
@@ -64,7 +52,7 @@ const MapContainer = ({height, width}) => {
   const mapStyles = {        
     height: height,
     width: width
-};
+    };
   
   let defaultCenter = {
     lat: 37.872024, lng: -122.260079
@@ -80,8 +68,8 @@ const MapContainer = ({height, width}) => {
         onClick={(e)=>(console.log('mouse lat/lng: ', e.latLng.lat(), e.latLng.lng(), e))}
       >
         {pinLocations.map((item) => (
-            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={()=>(setBoxID(item.id))} onMouseOut={()=>setBoxID(null)}>
-              {makeBox(item.id, item.lat, item.lng)}
+            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={(e)=>(setEventAndId(item, e))} onMouseOut={()=>setBoxID(null)}>
+        
             </MarkerF>
         ))}
 
@@ -92,7 +80,7 @@ const MapContainer = ({height, width}) => {
   )      
 }
 
-export default MapContainer;
+export default GMap;
 
 /* Map Style Credit: SnazzyMaps.com */
 

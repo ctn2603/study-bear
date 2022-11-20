@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import NavbarExample from '../components/Navbar'
-import MapContainer from '../components/mapGoogle'
+import MapContainer from '../components/MapContainer'
 import EventData from '../components/eventData'
+import GMap from '../components/GoogleMap'
 import { Flex, Text, Box } from '@chakra-ui/react'
 /*
     TODO:
@@ -18,11 +19,13 @@ function HomePage() {
             <Text fontSize='30px'>Welcome to StudyBear!</Text>
 
             <Flex justifyContent='center'>
-                <MapContainer height='75vh' width='50%'/>
+                
+                <MapContainer />
+               
 
                 {/* EventData is a placeholder for EventContainer
                     This Component will change when switching between:
-                    
+
                     -showing list of events
                     -showing Individual event data
                     -component for creating an event
