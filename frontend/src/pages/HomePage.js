@@ -19,9 +19,9 @@ function HomePage() {
             <Text fontSize='30px'>Welcome to StudyBear!</Text>
 
             <Flex justifyContent='center'>
-                
-                <MapContainer />
-               
+
+                <MapContainer height='75vh' width='48vw'/>
+            
 
                 {/* EventData is a placeholder for EventContainer
                     This Component will change when switching between:
@@ -34,7 +34,7 @@ function HomePage() {
                     *important note: make sure the above components follow the same
                     height/width parameters, which are passed in as props like below.
                 */}
-                <EventData height='75vh' width='30%'/>
+                <EventData height='75vh' width='48vw'/>
             </Flex>
             
         </Box>

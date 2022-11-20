@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF, InfoBox } from '@react-google-maps/api';
 import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
 
@@ -11,23 +11,7 @@ import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
    Fixing the centering issue:
    https://stackoverflow.com/questions/68425883/how-can-i-get-the-current-map-center-coordinates-using-getcenter-in-react-googl
 */
-
-const GMap = ({height, width, setEvent, setActiveBoxData}) => {
-  
-  const [boxID, setBoxID] = useState(null);
-
-  const [boxOpen, setOpen] = useState(false)
-  
-
-  const setEventAndId = (pinData, e) => {
-    setActiveBoxData(pinData)
-    setEvent(e)
-    console.log('x: ', e.pixel.x, ' y: ', e.pixel.y)
-    console.log(e)
-  }
-
-
-  const pinLocations = [
+const pinLocations = [
     {id: 1, lat: 37.872024, lng: -122.260579},
     {id: 2, lat: 37.873024, lng: -122.260479},
     {id: 3, lat: 37.874024, lng: -122.260379},
@@ -44,37 +28,60 @@ const GMap = ({height, width, setEvent, setActiveBoxData}) => {
     {id: 14, lat: 37.87191548645541, lng: -122.26283052815555},
     {id: 15, lat: 37.87403314540354, lng:-122.25776802547658 },
     {id: 16, lat: 37.8702259334051, lng: -122.26287922621155}
-
-
   ]
 
+
+function GMap({height, width, setEvent, setActiveBoxData}){
+
+  const [mapref, setMapRef] = useState(null);
+  const [center, setCenter] = useState(null);
+  const handleOnLoad = map => {
+    setMapRef(map);
+  };
+
+  const handleCenterChanged = () => {
+    if (mapref) {
+      const newCenter = mapref.getCenter();
+      console.log(newCenter)
+    }
+  };
+  
+  let defaultCenter = {
+    lat: 37.872024, lng: -122.260079
+  }
+
+  const setEventAndId = (pinData, e) => {
+    setActiveBoxData(pinData)
+    setEvent(e)
+    if (mapref) {
+        setCenter(mapref.getCenter())
+    }
+    console.log('x: ', e.pixel.x, ' y: ', e.pixel.y)
+    console.log(e)
+
+  }
 
   const mapStyles = {        
     height: height,
     width: width
     };
   
-  let defaultCenter = {
-    lat: 37.872024, lng: -122.260079
-  }
-
   return (
     <LoadScript googleMapsApiKey='AIzaSyCTFjsOkOx6a2s8WoIS9pHFfdiqGTOECv8'>
       <GoogleMap
         mapContainerStyle={mapStyles}
         zoom={16}
-        center={defaultCenter}
+        center={center || defaultCenter}
         options={{styles:darkMode}}
         onClick={(e)=>(console.log('mouse lat/lng: ', e.latLng.lat(), e.latLng.lng(), e))}
+        onLoad={handleOnLoad}
+        onCenterChanged={handleCenterChanged}
       >
         {pinLocations.map((item) => (
-            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={(e)=>(setEventAndId(item, e))} onMouseOut={()=>setBoxID(null)}>
+            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={(e)=>(setEventAndId(item, e))} onMouseOut={()=> setEventAndId(null, null)}>
         
             </MarkerF>
         ))}
-
-
-
       </GoogleMap>
     </LoadScript>
   )      
