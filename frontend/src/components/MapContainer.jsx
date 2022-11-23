@@ -3,6 +3,10 @@ import GMap from './GoogleMap'
 import { Box, Text } from '@chakra-ui/react'
 const EventContext = createContext(null)
 
+const shadowStyle = {
+    'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+}
+
 function MapContainer({height, width}) {
     const [currentEvent, setEvent] = useState(null)
     const [activeBoxData, setActiveBoxData] = useState(null)
@@ -14,7 +18,7 @@ function MapContainer({height, width}) {
             return
         }
         let boxStyle = {
-            position:'fixed', zIndex:'999',
+            position:'fixed', zIndex:'3',
             top: currentEvent.domEvent.clientY - 100,
             left: currentEvent.domEvent.clientX + 15
         }
@@ -27,7 +31,7 @@ function MapContainer({height, width}) {
         )
     }
     return (
-        <div style={{position:'relative'}}>
+        <div style={shadowStyle}>
             {infoBox()}
             <GMap height={height} width={width} setEvent={setEvent} setActiveBoxData={setActiveBoxData}/>
         </div>    
