@@ -15,7 +15,7 @@ function MapContainer({height, width}) {
         }
         let boxStyle = {
             position:'fixed', zIndex:'999',
-            top:currentEvent.domEvent.clientY - 100,
+            top: currentEvent.domEvent.clientY - 100,
             left: currentEvent.domEvent.clientX + 15
         }
         return (

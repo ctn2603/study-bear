@@ -17,21 +17,21 @@ function EventData({height, width}) {
         <Box ml='15' h={height} w={width}>
             <Flex w='100%'>
                 <Flex flexDirection='column' m='0' w='50%'>
-                    <Box h='35vh' w='95%' bg='#948585' borderRadius='20px'>
+                    <Box h='50%' w='95%' bg='#948585' borderRadius='20px'>
 
                         <Text textAlign='center'fontSize='17px' fontFamily='Arial'>
                             {data.title}
                         </Text>
 
-                        <Text ml='10' mb='0' fontSize='14px' fontFamily='Arial'>{data.time}</Text>
-                        <Text ml='10' mb='0' mt='1' fontSize='14px' fontFamily='Arial'>{data.capacity}</Text>
-                        <Text ml='10' mt='0' fontSize='14px' fontFamily='Arial'>{data.location}</Text>
+                        <Box h='5%' ml='10' mb='2' fontSize='14px' fontFamily='Arial'>{data.time}</Box>
+                        <Box h='5%' ml='10' mb='2' mt='1' fontSize='14px' fontFamily='Arial'>{data.capacity}</Box>
+                        <Box h='5%' ml='10' mt='2' mb='5' fontSize='14px' fontFamily='Arial'>{data.location}</Box>
 
-                        <Center>
-                            <Box h='17vh' w='85%' bg='#ccb4b4' borderRadius='15px' >
+                        
+                        <Box margin='auto' h='50%' w='85%' bg='#ccb4b4' borderRadius='15px' >
                             <Text p='10' mt='4' fontFamily='Arial'>{data.description}</Text>
-                            </Box>
-                        </Center>
+                        </Box>
+                       
                         
 
                     </Box>
@@ -46,7 +46,7 @@ function EventData({height, width}) {
                         </Box>
                     </Flex>
 
-                    <Box w='93%' h='26vh' mt='20' m='5' bg='#948585' borderRadius='20px'>
+                    <Box w='93%' h='40%' mt='20' m='5' bg='#948585' borderRadius='20px'>
                         <Text p='10'>More Info</Text>
                     </Box>
 
