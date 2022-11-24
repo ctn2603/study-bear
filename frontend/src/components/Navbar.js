@@ -4,7 +4,6 @@ import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
 import LoginPopup from "./LoginPopup";
 
- 
 console.log(logo); 
 
 function NavbarExample() {
