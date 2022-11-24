@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import NavbarExample from '../components/Navbar'
 import MapContainer from '../components/MapContainer'
 import EventData from '../components/eventData'
