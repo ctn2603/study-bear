@@ -1,7 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from "./books.png";
+import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
+import LoginPopup from "./LoginPopup";
 
  
 console.log(logo); 
@@ -20,12 +21,10 @@ function NavbarExample() {
         <Navbar.Brand href="/home">app name</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Brand  href="/login">Login
-          </Navbar.Brand>
-          <Navbar.Brand>/</Navbar.Brand>
+          <LoginPopup />
           <Navbar.Brand  href="/signup">Signup
           </Navbar.Brand>
-          <ToggleButton/>
+          <ToggleButton /> 
         </Navbar.Collapse>
       </Container>
     </Navbar>
