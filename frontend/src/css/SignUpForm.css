@@ -1,0 +1,20 @@
+
+    #bigDiv {
+       display: flex;
+       justify-content: center;
+       
+       
+    }
+   #signUpDiv {
+        width: 600px;
+        background-color: gainsboro;
+        justify-content: center;
+        padding: 20px;
+        margin: 20px;
+    }   
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+   

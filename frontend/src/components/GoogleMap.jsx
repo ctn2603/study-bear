@@ -1,45 +1,17 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF, InfoBox } from '@react-google-maps/api';
 import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
 
 /* tutorial:
     https://medium.com/@allynak/how-to-use-google-map-api-in-react-app-edb59f64ac9d
+
+   Style Documentation:
+   https://react-google-maps-api-docs.netlify.app/
+
+   Fixing the centering issue:
+   https://stackoverflow.com/questions/68425883/how-can-i-get-the-current-map-center-coordinates-using-getcenter-in-react-googl
 */
-
-const MapContainer = ({height, width}) => {
-  
-  const [boxID, setBoxID] = useState(null);
-  const [boxOpen, setOpen] = useState(false)
-  
-  const makeBox = (id, lat, lng) => {
-  
-    
-    let pos = {lat: lat, lng: lng}
-    const options = { closeBoxURL: '', enableEventPropagation: true };
-    
-
-    if (id === boxID) {
-
-      return (
-        
-          <InfoWindowF position={pos} options={options} style={{padding: '1px !important'}} >
-            <Box>
-              <Text bg='#2bdde3' color='white' p='10' fontSize='20' mb='0' w='30' borderRadius='20'>Bob's Study Group</Text>
-              <Flex>
-                <Text bg='#2a5ade' color='white' fontSize='10' w='44%' mt='4' mb='4' borderRadius='10' p='4' style={{display:'inline-block'}} >2:30PM - 5:00PM</Text>
-                <Spacer />
-                <Text bg='#de1f6b' color='white' fontSize='10' w='44%' mt='4' mb='4' borderRadius='10' p='4' style={{display:'inline-block'}} >Cap: 8/10</Text>
-              </Flex>
-              <Text bg='#6255c2' color='white' p='4' fontSize='10' mt='0' w='30' borderRadius='10'>MainStacks Level:C</Text>
-              
-            </Box>
-          </InfoWindowF>
-       
-      )
-    }
-  }
-
-  const pinLocations = [
+const pinLocations = [
     {id: 1, lat: 37.872024, lng: -122.260579},
     {id: 2, lat: 37.873024, lng: -122.260479},
     {id: 3, lat: 37.874024, lng: -122.260379},
@@ -56,43 +28,66 @@ const MapContainer = ({height, width}) => {
     {id: 14, lat: 37.87191548645541, lng: -122.26283052815555},
     {id: 15, lat: 37.87403314540354, lng:-122.25776802547658 },
     {id: 16, lat: 37.8702259334051, lng: -122.26287922621155}
-
-
   ]
 
 
-  const mapStyles = {        
-    height: height,
-    width: width
-};
+function GMap({height, width, setEvent, setActiveBoxData}){
+
+  const [mapref, setMapRef] = useState(null);
+  const [center, setCenter] = useState(null);
+  const handleOnLoad = map => {
+    setMapRef(map);
+  };
+
+  const handleCenterChanged = () => {
+    if (mapref) {
+      const newCenter = mapref.getCenter();
+      console.log(newCenter)
+    }
+  };
   
   let defaultCenter = {
     lat: 37.872024, lng: -122.260079
   }
 
+  const setEventAndId = (pinData, e) => {
+    setActiveBoxData(pinData)
+    setEvent(e)
+    if (mapref) {
+        setCenter(mapref.getCenter())
+    }
+    console.log('x: ', e.pixel.x, ' y: ', e.pixel.y)
+    console.log(e)
+
+  }
+
+  const mapStyles = {        
+    height: height,
+    width: width
+    };
+  
   return (
     <LoadScript googleMapsApiKey='AIzaSyCTFjsOkOx6a2s8WoIS9pHFfdiqGTOECv8'>
       <GoogleMap
         mapContainerStyle={mapStyles}
         zoom={16}
-        center={defaultCenter}
+        center={center || defaultCenter}
         options={{styles:darkMode}}
         onClick={(e)=>(console.log('mouse lat/lng: ', e.latLng.lat(), e.latLng.lng(), e))}
+        onLoad={handleOnLoad}
+        onCenterChanged={handleCenterChanged}
       >
         {pinLocations.map((item) => (
-            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={()=>(setBoxID(item.id))} onMouseOut={()=>setBoxID(null)}>
-              {makeBox(item.id, item.lat, item.lng)}
+            <MarkerF position={{lat: item.lat, lng:item.lng}} onMouseOver={(e)=>(setEventAndId(item, e))} onMouseOut={()=> setEventAndId(null, null)}>
+        
             </MarkerF>
         ))}
-
-
-
       </GoogleMap>
     </LoadScript>
   )      
 }
 
-export default MapContainer;
+export default GMap;
 
 /* Map Style Credit: SnazzyMaps.com */
 
