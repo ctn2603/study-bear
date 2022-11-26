@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom'
 import NavbarExample from '../components/Navbar'
 import MapContainer from '../components/MapContainer'
 import EventData from '../components/eventData'
@@ -7,6 +7,7 @@ import GMap from '../components/GoogleMap'
 import { Flex, Text, Box } from '@chakra-ui/react'
 import EventContainer from "../components/eventContainer";
 import {Outlet} from 'react-router-dom'
+import { PlusSquareIcon } from '@chakra-ui/icons'
 
 /*
     TODO:
@@ -39,6 +40,14 @@ function HomePage() {
                 */}
                 <Outlet />
             </Flex>
+            
+            <Flex align='center'>
+                <Link to='/addEvent'>
+                    <PlusSquareIcon ml='10' color='white' h='70' w='70' />
+                </Link>
+                <Box color='white'>{'<-- add an event!'}</Box>
+            </Flex>
+
             
         </Box>
     )
