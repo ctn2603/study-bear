@@ -1,19 +1,17 @@
 import { Box, Text, Flex, Center} from '@chakra-ui/react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { StateContext } from '../App'
 /* 
     TODO:
         make this more resizable
 
 */
 function EventData({height, width}) {
-    const data = {
-        title:'CS 70 Study Group',
-        time: 'now - 8:00PM',
-        capacity: '5/10',
-        description: 'studying for midterm tmrw',
-        location: 'Mainstacks Level C'
 
-    }
+    const events = useContext(StateContext).state.events
+    const data = events[useContext(StateContext).state.eventDataId]
+    console.log(data)
     return ( 
         <Box ml='15' h={height} w={width}>
             <Flex w='100%'>

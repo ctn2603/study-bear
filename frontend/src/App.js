@@ -63,7 +63,9 @@ const events = [
     //The following are for marker logic
     recentClickPos: null,
     infoBoxId:null,
-    markerEvent:null
+    markerEvent:null,
+    //id of the event to be shown on <EventData />
+    eventDataId:null
   }
 
 const StateContext = createContext()

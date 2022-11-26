@@ -2,6 +2,7 @@ import { useState, Context, useContext } from 'react'
 import { Box, Flex, Input } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { StateContext } from '../App'
+import { Link } from 'react-router-dom'
 
 function AddEventForm({height, width}) {
     const state = useContext(StateContext).state
@@ -63,6 +64,8 @@ function AddEventForm({height, width}) {
                 <CheckIcon />
                 <input type='submit' onClick={onSubmit}/>
             </Flex>
+
+            <Link to='/'>go back</Link>
         </Box>
     )
 }
