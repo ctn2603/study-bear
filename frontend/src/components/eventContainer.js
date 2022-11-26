@@ -13,36 +13,15 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 import Event from "./Event";
-
+import { useContext } from 'react'
+import { StateContext } from "../App";
 /* 
     TODO:
         make this more resizable
 
 */
 function EventContainer({ height, width }) {
-  const data = [
-    {
-      title: "CS 70 Study Group",
-      time: "now - 8:00PM",
-      capacity: "5/10",
-      description: "studying for midterm tmrw",
-      location: "Mainstacks Level C",
-    },
-    {
-      title: "CS 61C Study Group",
-      time: "3:00PM - 4:00PM",
-      capacity: "2/10",
-      description: "reviewing parallelism",
-      location: "Moffit Floor 1",
-    },
-    {
-      title: "CS 61A Study Group",
-      time: "5:00PM - 6:00PM",
-      capacity: "5/5",
-      description: "brainstorming for Ants",
-      location: "Moffit Floor 5",
-    },
-  ];
+  const data = useContext(StateContext).state.events
 
   const [item, setItem] = useState(data);
 
@@ -81,11 +60,16 @@ function EventContainer({ height, width }) {
               </Text>
             </Box>
 
-            <Flex flexDirection="column" m="0" w="100%">
+            <Box w='100%' h='80%' style={{overflow:'auto'}}>
+              {item.map((item) => {
+                return <Event item={item}></Event>
+              })}
+            </Box>
+            {/*<Flex flexDirection="column" m="0" w="100%" style={{'overflow':'auto'}}>
               {item.map((item) => {
                 return <Event item={item}></Event>;
-              })}
-            </Flex>
+              })} 
+            </Flex> */}
           </Box>
         </Flex>
       </Flex>

@@ -16,14 +16,50 @@ const events = [
       time:'5-7pm',
       capacity:'10',
       id:0,
-      lat: 37.87202,
+      lat: 37.87292,
       lng: -122.260579
+    },
+    {
+      title: "CS 70 Study Group",
+      time: "now - 8:00PM",
+      capacity: "5/10",
+      description: "studying for midterm tmrw",
+      location: "Mainstacks Level C",
+      id:1,
+      lat: 37.87202,
+      lng: -122.260209
+    },
+    {
+      title: "CS 61C Study Group",
+      time: "3:00PM - 4:00PM",
+      capacity: "2/10",
+      description: "reviewing parallelism",
+      location: "Moffit Floor 1",
+      id:2,
+      lat: 37.87202,
+      lng: -122.260429
+    },
+    {
+      title: "CS 61A Study Group",
+      time: "5:00PM - 6:00PM",
+      capacity: "5/5",
+      description: "brainstorming for Ants",
+      location: "Moffit Floor 5",
+      id:3,
+      lat: 37.87202,
+      lng: -122.260679
     }
   ]
+
+
+
+
+
+
   const stateInit = {
     events: events,
     //For eventCreation (event ID is simply array index)
-    nextId:1,
+    nextId:4,
     //The following are for marker logic
     recentClickPos: null,
     infoBoxId:null,
@@ -40,7 +76,7 @@ function App() {
      state variable contains other useful information about the state of the frontend,
      and can be easily changed for future featuress
 
-     The state variable itself AND the hook for setting it can be retrieved by all components.
+     The state variable itself AND the set function can be retrieved by all components.
 
      when updating state, make sure to call: setState(JSON.parse(JSON.stringify(state)))
      otherwise, nothing will re-render. <-took waayy to long to figure that out :)
