@@ -15,14 +15,19 @@ const events = [
       location:'mainstacks',
       time:'5-7pm',
       capacity:'10',
-      id:1,
+      id:0,
       lat: 37.87202,
       lng: -122.260579
     }
   ]
   const stateInit = {
     events: events,
-    recentClickPos: null
+    //For eventCreation (event ID is simply array index)
+    nextId:1,
+    //The following are for marker logic
+    recentClickPos: null,
+    infoBoxId:null,
+    markerEvent:null
   }
 
 const StateContext = createContext()
@@ -36,6 +41,9 @@ function App() {
      and can be easily changed for future featuress
 
      The state variable itself AND the hook for setting it can be retrieved by all components.
+
+     when updating state, make sure to call: setState(JSON.parse(JSON.stringify(state)))
+     otherwise, nothing will re-render. <-took waayy to long to figure that out :)
     */
   const [state, setState] = useState(stateInit)
     return (

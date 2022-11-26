@@ -18,9 +18,12 @@ function AddEventForm({height, width}) {
     const onSubmit = () => {
         buildEvent.lat = state.recentClickPos.lat
         buildEvent.lng = state.recentClickPos.lng
-        state.events.push(buildEvent)
-        setState(state)
-        console.log(state)
+        buildEvent.id = state.nextId
+        var ev = JSON.parse(JSON.stringify(buildEvent))
+        state.events.push(ev)
+        state.nextId = state.nextId + 1
+        setState(JSON.parse(JSON.stringify(state)))
+        console.log('in onsubmit', state)
     }
     return (
         <Box h={height} w={width} bg='white'>
