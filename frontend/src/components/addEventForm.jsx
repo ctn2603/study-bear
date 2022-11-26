@@ -1,14 +1,26 @@
-import { useState } from 'react'
+import { useState, Context, useContext } from 'react'
 import { Box, Flex, Input } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
+import { StateContext } from '../App'
 
 function AddEventForm({height, width}) {
+    const state = useContext(StateContext).state
+    const setState = useContext(StateContext).setState
+
     const [buildEvent, setBuild] = useState({})
 
     const updateBuild = (e, attr) => {
         buildEvent[attr] = e.target.value
         setBuild(buildEvent)
         console.log(buildEvent)
+    }
+
+    const onSubmit = () => {
+        buildEvent.lat = state.recentClickPos.lat
+        buildEvent.lng = state.recentClickPos.lng
+        state.events.push(buildEvent)
+        setState(state)
+        console.log(state)
     }
     return (
         <Box h={height} w={width} bg='white'>
@@ -46,7 +58,7 @@ function AddEventForm({height, width}) {
             <Flex>
                 <Box>Selected</Box>
                 <CheckIcon />
-                <input type='submit'/>
+                <input type='submit' onClick={onSubmit}/>
             </Flex>
         </Box>
     )

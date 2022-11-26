@@ -1,7 +1,7 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useContext} from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF, InfoBox } from '@react-google-maps/api';
 import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
-
+import { StateContext } from '../App';
 /* tutorial:
     https://medium.com/@allynak/how-to-use-google-map-api-in-react-app-edb59f64ac9d
 
@@ -65,7 +65,20 @@ function GMap({height, width, setEvent, setActiveBoxData}){
     height: height,
     width: width
     };
-  
+
+
+    const state = useContext(StateContext).state
+    const setState = useContext(StateContext).setState
+    
+    const handleClick = (e) => {
+        const pos = {
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng()
+        }
+        state.recentClickPos = pos
+        setState(state)
+        console.log(state.recentClickPos)
+    }
   return (
     <LoadScript googleMapsApiKey='AIzaSyCTFjsOkOx6a2s8WoIS9pHFfdiqGTOECv8'>
       <GoogleMap
@@ -73,7 +86,7 @@ function GMap({height, width, setEvent, setActiveBoxData}){
         zoom={16}
         center={center || defaultCenter}
         options={{styles:darkMode}}
-        onClick={(e)=>(console.log('mouse lat/lng: ', e.latLng.lat(), e.latLng.lng(), e))}
+        onClick={handleClick}
         onLoad={handleOnLoad}
         onCenterChanged={handleCenterChanged}
       >

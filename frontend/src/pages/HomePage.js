@@ -15,7 +15,7 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
         fix navbar
         optimize map
 */
-function HomePage() {
+function HomePage({height, width}) {
 
     return (
         <Box bg='#326da8' h='100vh'>
