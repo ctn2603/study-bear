@@ -3,12 +3,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
 import LoginPopup from "./LoginPopup";
-
+import '../css/NavBarExample.css'
+import { Text } from '@chakra-ui/react'
 console.log(logo); 
 
 function NavbarExample() {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar color='white' variant="light" className='navBar'>
       <Container>
         <img
               src={logo}
@@ -17,7 +18,7 @@ function NavbarExample() {
               className="d-inline-block align-top"
               alt="books emoji"
             />
-        <Navbar.Brand href="/home">app name</Navbar.Brand>
+        <Navbar.Brand href="/"><Text align='center' color='white'>Study Bear</Text></Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <LoginPopup />

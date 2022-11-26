@@ -13,6 +13,9 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 import Event from "./Event";
+import { useContext } from 'react'
+import { StateContext } from "../App";
+
 
 /* 
     TODO:
@@ -20,29 +23,7 @@ import Event from "./Event";
 
 */
 function EventContainer({ height, width }) {
-  const data = [
-    {
-      title: "CS 70 Study Group",
-      time: "now - 8:00PM",
-      capacity: "5/10",
-      description: "studying for midterm tmrw",
-      location: "Mainstacks Level C",
-    },
-    {
-      title: "CS 61C Study Group",
-      time: "3:00PM - 4:00PM",
-      capacity: "2/10",
-      description: "reviewing parallelism",
-      location: "Moffit Floor 1",
-    },
-    {
-      title: "CS 61A Study Group",
-      time: "5:00PM - 6:00PM",
-      capacity: "5/5",
-      description: "brainstorming for Ants",
-      location: "Moffit Floor 5",
-    },
-  ];
+  const data = useContext(StateContext).state.events
 
   const [item, setItem] = useState(data);
 
@@ -56,10 +37,10 @@ function EventContainer({ height, width }) {
   };
 
   return (
-    <Box ml="15" h={height} w={width}>
+    <Box ml="30" bg="#0A2463" h={height} w={width} borderRadius='20px' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
       <Flex w="100%">
         <Flex flexDirection="column" m="0" w="100%">
-          <Box h="75vh" w="95%" bg="#948585" borderRadius="20px">
+          <Box h="75vh" w="95%" borderRadius="20px">
             <Box>
               <Text textAlign="left" marginLeft="25" fontSize="17px">
                 Events
@@ -81,11 +62,11 @@ function EventContainer({ height, width }) {
               </Text>
             </Box>
 
-            <Flex flexDirection="column" m="0" w="100%">
+            <Box w='100%' h='80%' style={{overflow:'auto'}}>
               {item.map((item) => {
-                return <Event item={item}></Event>;
+                return <Event item={item}></Event>
               })}
-            </Flex>
+            </Box>
           </Box>
         </Flex>
       </Flex>
