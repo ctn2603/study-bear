@@ -1,13 +1,28 @@
 import './css/App.css';
-
 import HomePage from "./pages/HomePage.js"
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
+import NavbarExample from './components/Navbar'
+import EventContainer from './components/eventContainer';
+import EventData from './components/eventData';
+
 function App() {
  
     return (
-      <div className="App">
+      <Router>
+        <NavbarExample />
 
-        <HomePage />
-      </div>
+        <div className="App">
+  
+        <Routes>
+          <Route exact path='/' element={<HomePage/>}>
+            <Route exact path='/' element={<EventContainer height='75vh' width='48vw'/>}></Route>
+            <Route exact path='/eventData' element={<EventData height='75vh' width='48vw'/>}></Route>
+          </Route>
+          <Route exact path='/signup' element={<div>sign up screen</div>}></Route>
+        </Routes>
+
+        </div>
+      </Router>
     );
 }
 

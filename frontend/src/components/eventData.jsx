@@ -1,4 +1,5 @@
 import { Box, Text, Flex, Center} from '@chakra-ui/react'
+import {Link} from 'react-router-dom'
 /* 
     TODO:
         make this more resizable
@@ -43,6 +44,7 @@ function EventData({height, width}) {
 
                         <Box bg='#8a5757' w='90%' mr='12' ml='10' borderRadius='10'>
                             <Text m='13' alignSelf='center'>Back</Text>
+                            <Link to='/'>go back</Link>
                         </Box>
                     </Flex>
 

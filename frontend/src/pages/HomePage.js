@@ -5,6 +5,9 @@ import MapContainer from '../components/MapContainer'
 import EventData from '../components/eventData'
 import GMap from '../components/GoogleMap'
 import { Flex, Text, Box } from '@chakra-ui/react'
+import EventContainer from "../components/eventContainer";
+import {Outlet} from 'react-router-dom'
+
 /*
     TODO:
         add stle to title
@@ -15,7 +18,6 @@ function HomePage() {
 
     return (
         <Box bg='#326da8' h='100vh'>
-            <NavbarExample />
 
             <Text fontSize='30px'>Welcome to StudyBear!</Text>
 
@@ -35,7 +37,7 @@ function HomePage() {
                     *important note: make sure the above components follow the same
                     height/width parameters, which are passed in as props like below.
                 */}
-                <EventData height='75vh' width='48vw'/>
+                <Outlet />
             </Flex>
             
         </Box>

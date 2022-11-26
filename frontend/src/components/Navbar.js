@@ -17,7 +17,7 @@ function NavbarExample() {
               className="d-inline-block align-top"
               alt="books emoji"
             />
-        <Navbar.Brand href="/home">app name</Navbar.Brand>
+        <Navbar.Brand href="/">app name</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <LoginPopup />

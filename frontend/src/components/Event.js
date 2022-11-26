@@ -1,8 +1,9 @@
 import { Box, Text, Flex, Center, HStack } from "@chakra-ui/react";
-
+import { Link } from 'react-router-dom'
 const Event = ({ item }) => {
   return (
     <Center>
+      <Link to='/eventData'>go to eventData</Link>
       <Box margin={10} h="17vh" w="85%" bg="#ccb4b4" borderRadius="15px">
         <Text textAlign="left" marginLeft={15} fontFamily="Arial">
           {item.title}
