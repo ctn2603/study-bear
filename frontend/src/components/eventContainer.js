@@ -15,6 +15,8 @@ import React, { useState } from "react";
 import Event from "./Event";
 import { useContext } from 'react'
 import { StateContext } from "../App";
+
+
 /* 
     TODO:
         make this more resizable
@@ -35,10 +37,10 @@ function EventContainer({ height, width }) {
   };
 
   return (
-    <Box ml="15" h={height} w={width}>
+    <Box ml="30" bg="#0A2463" h={height} w={width} borderRadius='20px' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
       <Flex w="100%">
         <Flex flexDirection="column" m="0" w="100%">
-          <Box h="75vh" w="95%" bg="#948585" borderRadius="20px">
+          <Box h="75vh" w="95%" borderRadius="20px">
             <Box>
               <Text textAlign="left" marginLeft="25" fontSize="17px">
                 Events
@@ -65,11 +67,6 @@ function EventContainer({ height, width }) {
                 return <Event item={item}></Event>
               })}
             </Box>
-            {/*<Flex flexDirection="column" m="0" w="100%" style={{'overflow':'auto'}}>
-              {item.map((item) => {
-                return <Event item={item}></Event>;
-              })} 
-            </Flex> */}
           </Box>
         </Flex>
       </Flex>

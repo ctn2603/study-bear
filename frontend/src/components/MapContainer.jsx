@@ -33,7 +33,7 @@ function MapContainer({height, width}) {
         )
     }
     return (
-        <div style={{position:'relative'}}>
+        <div style={{position:'relative', marginLeft:'20px', 'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
             {infoBox()}
             <GMap height={height} width={width} setEvent={setEvent} setActiveBoxData={setActiveBoxData}/>
         </div>    

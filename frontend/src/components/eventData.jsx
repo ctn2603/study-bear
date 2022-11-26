@@ -41,8 +41,7 @@ function EventData({height, width}) {
                         </Box>
 
                         <Box bg='#8a5757' w='90%' mr='12' ml='10' borderRadius='10'>
-                            <Text m='13' alignSelf='center'>Back</Text>
-                            <Link to='/'>go back</Link>
+                            <Link to='/'><Text m='13' alignSelf='center'>Back</Text></Link>
                         </Box>
                     </Flex>
 

@@ -18,13 +18,13 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
 function HomePage({height, width}) {
 
     return (
-        <Box bg='#326da8' h='100vh'>
+        <Box bg='#FAF9F6' h='100vh'>
 
-            <Text fontSize='30px'>Welcome to StudyBear!</Text>
+            <Text fontSize='30px' m='10'>Welcome to StudyBear!</Text>
 
             <Flex justifyContent='center'>
 
-                <MapContainer height='75vh' width='48vw'/>
+                <MapContainer height='75vh' width='45vw'/>
             
 
                 {/* EventData is a placeholder for EventContainer
@@ -43,7 +43,7 @@ function HomePage({height, width}) {
             
             <Flex align='center'>
                 <Link to='/addEvent'>
-                    <PlusSquareIcon ml='10' color='white' h='70' w='70' />
+                    <PlusSquareIcon ml='30' color='#0A2463' h='70' w='70' />
                 </Link>
                 <Box color='white'>{'<-- add an event!'}</Box>
             </Flex>
