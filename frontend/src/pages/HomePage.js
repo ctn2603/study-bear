@@ -18,14 +18,24 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
 function HomePage({height, width}) {
 
     return (
-        <Box bg='#FAF9F6' h='100vh'>
+        <Box bg='#FAF9F6' h='90vh'>
 
-            <Text fontSize='30px' m='10'>Welcome to StudyBear!</Text>
+            <Text fontSize='30px' mt='10' p='0' mb='0'>Welcome to StudyBear!</Text>
+            <Text fontSize='15px' p='0' mt='0' mb='30'>Find Study Groups in Cal NOW!</Text>
 
             <Flex justifyContent='center'>
 
-                <MapContainer height='75vh' width='45vw'/>
-            
+                <Flex direction='column'>
+                    <MapContainer height='65vh' width='45vw'/>
+                    <Box>
+                        <Flex mt='5'>
+                            <Link to='/addEvent'>
+                                <PlusSquareIcon ml='30' color='black' h='70' w='70' />
+                            </Link>
+                            <Box textAlign='center' mt='20' color='black'>{'<-- add an event!'}</Box>
+                        </Flex>
+                    </Box>
+                </Flex>
 
                 {/* EventData is a placeholder for EventContainer
                     This Component will change when switching between:
@@ -39,13 +49,6 @@ function HomePage({height, width}) {
                     height/width parameters, which are passed in as props like below.
                 */}
                 <Outlet />
-            </Flex>
-            
-            <Flex align='center'>
-                <Link to='/addEvent'>
-                    <PlusSquareIcon ml='30' color='#0A2463' h='70' w='70' />
-                </Link>
-                <Box color='white'>{'<-- add an event!'}</Box>
             </Flex>
 
             

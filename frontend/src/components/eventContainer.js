@@ -37,7 +37,7 @@ function EventContainer({ height, width }) {
   };
 
   return (
-    <Box ml="30" bg="#0A2463" h={height} w={width} borderRadius='20px' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
+    <Box ml="30" bg="#817F75" h={height} w={width} borderRadius='20px' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
       <Flex w="100%">
         <Flex flexDirection="column" m="0" w="100%">
           <Box h="75vh" w="95%" borderRadius="20px">
