@@ -15,7 +15,7 @@ import React, { useState } from "react";
 import Event from "./Event";
 import { useContext } from 'react'
 import { StateContext } from "../App";
-
+import '../css/EventContainer.css'
 
 /* 
     TODO:
@@ -42,7 +42,7 @@ function EventContainer({ height, width }) {
         <Flex flexDirection="column" m="0" w="100%">
           <Box h="75vh" w="95%" borderRadius="20px">
             <Box>
-              <Text textAlign="left" marginLeft="25" fontSize="17px">
+              <Text textAlign="left" marginLeft="25" fontSize="25px" p='10' pt='13' pb='0' mb='2'>
                 Events
                 <Menu>
                   <MenuButton
@@ -62,7 +62,7 @@ function EventContainer({ height, width }) {
               </Text>
             </Box>
 
-            <Box w='100%' h='80%' style={{overflow:'auto'}}>
+            <Box align='center' w='100%' h='85%' style={{overflow:'auto'}} className='vertScroll'>
               {item.map((item) => {
                 return <Event item={item}></Event>
               })}

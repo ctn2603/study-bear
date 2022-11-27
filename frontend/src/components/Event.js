@@ -13,8 +13,7 @@ const Event = ({ item }) => {
   }
 
   return (
-    <Center>
-      <Box margin={10} h="17vh" w="85%" bg='#D9D9D9' borderRadius="15px">
+      <Box margin={10} h="17vh" w="40vw" bg='#D9D9D9' borderRadius="15px" ml='20'>
         <Text textAlign="left" marginLeft={15} fontFamily="Arial">
           {item.title}
         </Text>
@@ -32,7 +31,7 @@ const Event = ({ item }) => {
                                         >More Info</Button></Link>
         </Box>
       </Box>
-    </Center>
+    
   );
 };
 export default Event;
