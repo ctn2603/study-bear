@@ -1,0 +1,27 @@
+@import "../mixins";
+@import "../variables";
+
+.alignCenter {
+  text-align: -webkit-center;
+}
+
+.formStyle {
+  padding: $spacing-m;
+  border: $main-border black;
+  border-radius: 20px;
+  max-width: 350px;
+}
+
+.formGroup {
+  @include display-flex;
+  @include justify-content-between;
+  margin-bottom: $spacing-m;
+}
+
+.formControl {
+  width: 200px;
+  margin-left: $spacing-s;
+  color: #212529;
+  border: $main-border #ced4da;
+  border-radius: 5px;
+}
