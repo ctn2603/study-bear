@@ -21,7 +21,9 @@ function HomePage({height, width}) {
         <Box bg='#FAF9F6' h='90vh' fontFamily='Futura'>
 
             <Text fontSize='48px' mt='10' p='0' mb='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
-            <Text fontSize='15px' p='0' mt='0' mb='30'>Find Study Groups in Cal NOW!</Text>
+            <Flex>
+                
+            </Flex>
 
             <Flex justifyContent='center'>
 
