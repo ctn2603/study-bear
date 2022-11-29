@@ -10,7 +10,7 @@ function SignIn() {
     return (
       <div className="signin-page">
 
-        <NavbarExample/>
+        <SignUpForm/>
       </div>
     );
 }

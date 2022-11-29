@@ -5,6 +5,7 @@ import MapContainer from '../components/MapContainer'
 import EventData from '../components/eventData'
 import GMap from '../components/GoogleMap'
 import { Flex, Text, Box } from '@chakra-ui/react'
+import '../css/Homepage.css';
 /*
     TODO:
         add stle to title

@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import logo from "../images/logo.png";
 import ToggleButton from "./ToggleButton";
 import '../css/Navbar.css';
+import LoginPopup from './LoginPopup';
 
 
 
@@ -14,7 +15,7 @@ function Navbar() {
               alt="logo"
             />
       <div id = "buttonContainer">
-        <button id ="loginButton"> login </button>
+        <LoginPopup/>
         <button id ="signupButton"> signup </button>
 
       </div>
@@ -25,3 +26,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// <button id ="loginButton"> login </button>
