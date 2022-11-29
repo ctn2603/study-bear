@@ -18,9 +18,9 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
 function HomePage({height, width}) {
 
     return (
-        <Box bg='#FAF9F6' h='90vh'>
+        <Box bg='#FAF9F6' h='90vh' fontFamily='Futura'>
 
-            <Text fontSize='30px' mt='10' p='0' mb='0'>Welcome to StudyBear!</Text>
+            <Text fontSize='48px' mt='10' p='0' mb='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
             <Text fontSize='15px' p='0' mt='0' mb='30'>Find Study Groups in Cal NOW!</Text>
 
             <Flex justifyContent='center'>
@@ -30,7 +30,7 @@ function HomePage({height, width}) {
                     <Box>
                         <Flex mt='5'>
                             <Link to='/addEvent'>
-                                <PlusSquareIcon ml='30' color='#6C4B5E' h='70' w='70' />
+                                <PlusSquareIcon ml='20' bg='#F9FB03' p='0' color='#0327D6' h='70' w='70' />
                             </Link>
                             <Box textAlign='center' mt='20' color='black'>{'<-- add an event!'}</Box>
                         </Flex>
