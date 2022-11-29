@@ -4,4 +4,8 @@ function addEvent(event: IEvent) {
 	return eventModel.create(event);
 }
 
-export { IEvent, addEvent };
+function removeEvent(event: IEvent) {
+	return eventModel.findByIdAndDelete(event);
+}
+
+export { IEvent, addEvent, removeEvent };

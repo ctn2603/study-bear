@@ -21,7 +21,8 @@ if (process.env.NODE_ENV === "production")
     dbName = "fullstackdb";
 else
     dbName = "fullstackdbdev";
-const dbUrl = `mongodb+srv://${adminUsername}:${adminPassword}@cluster0.rwglkg0.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+// const dbUrl = `mongodb+srv://${adminUsername}:${adminPassword}@cluster0.rwglkg0.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const dbUrl = `mongodb+srv://${adminUsername}:${adminPassword}@cluster0.xyq0dsw.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 function connectDb() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
