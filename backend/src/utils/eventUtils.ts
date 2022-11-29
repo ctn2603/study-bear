@@ -5,4 +5,12 @@ function addEvent(event: IEvent) {
 	return dbManager.addEvent(event);
 }
 
-export { addEvent };
+function removeEvent(event: IEvent) {
+	return dbManager.removeEvent(event);
+}
+
+function getEvents() {
+	return dbManager.getEvents();
+}
+
+export { addEvent, removeEvent, getEvents };

@@ -41,7 +41,7 @@ authRouter.post(
 );
 
 authRouter.post("/signout", (req, res) => {
-	res.send(`abcddef ${process.env.NODE_ENV}`);
+	res.send(`hello ${process.env.NODE_ENV}`);
 });
 
 export { authRouter };
