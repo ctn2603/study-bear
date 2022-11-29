@@ -1,34 +1,27 @@
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import logo from "../images/books.png";
 import ToggleButton from "./ToggleButton";
 import LoginPopup from "./LoginPopup";
-import '../css/NavBarExample.css'
+import '../css/Navbar.css'
 import { Text } from '@chakra-ui/react'
 console.log(logo); 
 
-function NavbarExample() {
+function Navbar() {
   return (
-    <Navbar color='white' variant="light" className='navBar'>
-      <Container>
-        <img
+    <div id="background">
+      <img    id="logo"
               src={logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-              alt="books emoji"
+              width="40"
+              alt="logo"
             />
-        <Navbar.Brand href="/"><Text align='center' color='white'>Study Bear</Text></Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <LoginPopup />
-          <Navbar.Brand  href="/signup">Signup
-          </Navbar.Brand>
-          <ToggleButton /> 
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <div id = "buttonContainer">
+        <button id ="loginButton"> login </button>
+        <button id ="signupButton"> signup </button>
+
+      </div>
+      
+    </div>
   );
 }
 
-export default NavbarExample;
+export default Navbar;
