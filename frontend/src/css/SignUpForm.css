@@ -1,13 +1,19 @@
 
-    #bigDiv {
+   body {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+   }
+
+   #bigDiv {
        display: flex;
        justify-content: center;
-       
+       flex-direction: column;
+       width: 100%;
        
     }
+
    #signUpDiv {
         width: 600px;
-        background-color: gainsboro;
+        background-color: #0327d6;
         justify-content: center;
         padding: 20px;
         margin: 20px;
@@ -17,4 +23,8 @@
         display: flex;
         justify-content: center;
     }
-   
+
+    #studybearLogo{
+        height: 50px;
+        width: 250px;
+    }
