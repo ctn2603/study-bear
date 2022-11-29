@@ -1,22 +1,18 @@
 import { Schema, model } from "mongoose";
 
 interface IEvent {
-	pinLocation: string;
 	title: string;
 	description: string;
+	location: string;
+	time: string;
+	currCap: number;
 	capacity: number;
-	datetime: Date;
-	subject: string;
-	major: string;
-	isFull: boolean;
-	author: string;
+	id: number;
+	lat: number;
+	lng: number;
 }
 
 const eventSchema = new Schema<IEvent>({
-	pinLocation: {
-		type: String,
-		required: true,
-	},
 	title: {
 		type: String,
 		required: true,
@@ -25,28 +21,32 @@ const eventSchema = new Schema<IEvent>({
 		type: String,
 		required: true,
 	},
+	location: {
+		type: String,
+		required: true,
+	},
+	time: {
+		type: String,
+		required: true,
+	},
+	currCap: {
+		type: Number,
+		required: true,
+	},
 	capacity: {
 		type: Number,
 		required: true,
 	},
-	datetime: {
-		type: Date,
+	id: {
+		type: Number,
 		required: true,
 	},
-	subject: {
-		type: String,
+	lat: {
+		type: Number,
 		required: true,
 	},
-	major: {
-		type: String,
-		required: true,
-	},
-	isFull: {
-		type: Boolean,
-		required: true,
-	},
-	author: {
-		type: String,
+	lng: {
+		type: Number,
 		required: true,
 	},
 });
