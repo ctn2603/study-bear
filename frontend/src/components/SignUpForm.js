@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import '../css/SignUpForm.css';
+import studybear from '../images/studybear.png';
 
 function SignUpForm() {
   const [validated, setValidated] = useState(false);
@@ -22,6 +23,8 @@ function SignUpForm() {
 
   return (
     <div id="bigDiv">
+      <img src={studybear} id= "studybearLogo"/>
+
     <Form noValidate validated={validated} onSubmit={handleSubmit} id= "signUpDiv">
       <Row className="mb-3" class="row">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
