@@ -67,6 +67,6 @@ authRouter.post("/signin", [middleware_1.emailValidator], (req, res) => __awaite
     });
 }));
 authRouter.post("/signout", (req, res) => {
-    res.send(`abcddef ${process.env.NODE_ENV}`);
+    res.send(`hello ${process.env.NODE_ENV}`);
 });
 //# sourceMappingURL=authRouter.js.map

@@ -26,7 +26,12 @@ dataRouter.post("/add-event", (req, res) => {
 
 dataRouter.delete("/remove-event", (req, res) => {
 	// TODO: remove event
-	res.send("Remove event");
+	return utils
+		.removeEvent(req.body)
+		.then(() => res.sendStatus(200))
+		.catch((error: any) => {
+			res.status(500).send(error);
+		});
 });
 
 dataRouter.get("/get-events", (req, res) => {
