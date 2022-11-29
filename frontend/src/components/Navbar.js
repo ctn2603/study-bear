@@ -18,7 +18,9 @@ function NavbarExample() {
               className="d-inline-block align-top"
               alt="books emoji"
             />
-        <Navbar.Brand href="/"><Text align='center' color='white'>Study Bear</Text></Navbar.Brand>
+        <Navbar.Brand href="/"><Text align='center' color='white' fontSize='20'
+          style={{position:'relative', top:'5px'}}
+          >Study Bear</Text></Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <LoginPopup />

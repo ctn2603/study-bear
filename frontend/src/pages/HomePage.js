@@ -30,7 +30,7 @@ function HomePage({height, width}) {
                     <Box>
                         <Flex mt='5'>
                             <Link to='/addEvent'>
-                                <PlusSquareIcon ml='30' color='black' h='70' w='70' />
+                                <PlusSquareIcon ml='30' color='#6C4B5E' h='70' w='70' />
                             </Link>
                             <Box textAlign='center' mt='20' color='black'>{'<-- add an event!'}</Box>
                         </Flex>

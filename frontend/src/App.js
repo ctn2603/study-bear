@@ -14,7 +14,8 @@ const events = [
       description:'we are studying for mt2 tmrw',
       location:'mainstacks',
       time:'5-7pm',
-      capacity:'10',
+      currCap:0,
+      capacity:10,
       id:0,
       lat: 37.87292,
       lng: -122.260579
@@ -22,7 +23,8 @@ const events = [
     {
       title: "CS 70 Study Group",
       time: "now - 8:00PM",
-      capacity: "5/10",
+      currCap:0,
+      capacity: 10,
       description: "studying for midterm tmrw",
       location: "Mainstacks Level C",
       id:1,
@@ -32,7 +34,7 @@ const events = [
     {
       title: "CS 61C Study Group",
       time: "3:00PM - 4:00PM",
-      capacity: "2/10",
+      capacity: 10,
       description: "reviewing parallelism",
       location: "Moffit Floor 1",
       id:2,
@@ -42,7 +44,8 @@ const events = [
     {
       title: "CS 61A Study Group",
       time: "5:00PM - 6:00PM",
-      capacity: "5/5",
+      currCap: 10,
+      capacity: 10,
       description: "brainstorming for Ants",
       location: "Moffit Floor 5",
       id:3,

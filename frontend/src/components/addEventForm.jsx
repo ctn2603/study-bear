@@ -1,5 +1,5 @@
 import { useState, Context, useContext } from 'react'
-import { Box, Flex, Input } from '@chakra-ui/react'
+import { Box, Flex, Input, FormControl, FormLabel, Select } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
@@ -47,9 +47,21 @@ function AddEventForm({height, width}) {
                 }/>
 
                 <Box>Major</Box>
+
                 <Input variant='outline' placeholder='major' onInput={
                     (e) => updateBuild(e, 'major')
                 }/>
+
+            <FormControl>
+                <FormLabel>Major</FormLabel>
+                <Select placeholder='Select Major' onInput={(e)=>console.log(e.target.value)}>
+                    <option>CS</option>
+                    <option>EECS</option>
+                    <option>ECON</option>
+                    <option>OTHER</option>
+                </Select>
+            </FormControl> 
+
             </Flex>
 
 

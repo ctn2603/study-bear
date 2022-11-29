@@ -16,7 +16,6 @@ import Event from "./Event";
 import { useContext } from 'react'
 import { StateContext } from "../App";
 import '../css/EventContainer.css'
-
 /* 
     TODO:
         make this more resizable
@@ -35,7 +34,7 @@ function EventContainer({ height, width }) {
     });
     setItem(newItem);
   };
-
+  
   return (
     <Box ml="30" bg="#817F75" h={height} w={width} borderRadius='20px' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
       <Flex w="100%">
