@@ -8,4 +8,8 @@ function removeEvent(event: IEvent) {
 	return eventModel.findByIdAndDelete(event);
 }
 
-export { IEvent, addEvent, removeEvent };
+function getEvents() {
+	return eventModel.find();
+}
+
+export { IEvent, addEvent, removeEvent, getEvents };

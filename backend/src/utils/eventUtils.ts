@@ -9,4 +9,8 @@ function removeEvent(event: IEvent) {
 	return dbManager.removeEvent(event);
 }
 
-export { addEvent, removeEvent };
+function getEvents() {
+	return dbManager.getEvents();
+}
+
+export { addEvent, removeEvent, getEvents };
