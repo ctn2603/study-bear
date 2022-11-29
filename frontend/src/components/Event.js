@@ -13,22 +13,24 @@ const Event = ({ item }) => {
   }
 
   return (
-      <Box margin={10} h="17vh" w="40vw" bg='#D9D9D9' borderRadius="15px" ml='20' style={{'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
-        <Text textAlign="left" marginLeft={15} mb='0' pt='7' fontFamily="Arial">
+      <Box margin={10} h="16vh" w="30vw" bg='#FFFFFF' borderRadius="15px" ml='20' style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}>
+        <Text fontSize='18' textAlign="left" marginLeft={15} mb='0' pt='7' fontFamily="Futura">
           {item.title}
         </Text>
-        <Text textAlign="left" marginLeft={15} mb='0'fontFamily="Arial">
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
           {item.time}
         </Text>
-        <Text textAlign="left" marginLeft={15} mb='0' fontFamily="Arial">
-          {item.location}
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0' fontFamily="Futura">
+          {item.location}  * {item.capacity - item.currCap} spots open
         </Text>
-        <Box textAlign='left'>
+        <Box textAlign='left' fontFamily='Futura' mt='5'>
           <Link to='/eventData' style={{textDecoration:'none'}}><Button
-            borderRadius='7' 
-            bg='#6C4B5E'
+            style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}
+            borderRadius='3' 
+            bg='#0327D6'
             color='white'
             border='0'
+            mb='0'
             onClick={() => onClick(item)} textAlign='left' m='10' mt='3'
             >More Info</Button></Link>
         </Box>
