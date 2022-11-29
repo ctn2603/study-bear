@@ -64,7 +64,7 @@ function EventContainer({ height, width }) {
               </Text>
             </Box>
 
-            <Box align='center' w='100%' h='85%' style={{overflow:'auto'}} className='vertScroll'>
+            <Box align='center' w='100%' h='59vh' style={{overflow:'auto'}} className='vertScroll'>
               {item.map((item) => {
                 return <Event item={item}></Event>
               })}

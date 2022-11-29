@@ -20,15 +20,20 @@ function HomePage({height, width}) {
     return (
         <Box bg='#FAF9F6' h='90vh' fontFamily='Futura'>
 
-            <Text fontSize='48px' mt='10' p='0' mb='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
-            <Flex>
-                
+            <Flex direction='column'>
+                <Box ml='9vw' mb='0' pb='0' textAlign='left'>
+                    <Text mb='0' pb='0' fontSize='45px' mt='10' p='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
+                </Box>
+                <Flex ml='9vw' mt='0' pt='0'>
+                    <Text mt='0' pt='0' fontSize='45px' color='#0327D6' style={{'font-weight': 'bold'}}>Study</Text>
+                    <Text fontSize='45px' color='#429AFD' style={{'font-weight': 'bold'}}>Bear</Text>
+                </Flex>
             </Flex>
 
             <Flex justifyContent='center'>
 
                 <Flex direction='column'>
-                    <MapContainer height='65vh' width='45vw'/>
+                    <MapContainer height='60vh' width='45vw'/>
                     <Box>
                         <Flex mt='5'>
                             <Link to='/addEvent'>

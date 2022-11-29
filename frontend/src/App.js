@@ -96,7 +96,7 @@ function App() {
     
           <Routes>
             <Route exact path='/' element={<HomePage/>}>
-              <Route exact path='/' element={<EventContainer height='74vh' width='35vw' />}></Route>
+              <Route exact path='/' element={<EventContainer height='69vh' width='35vw' />}></Route>
               <Route exact path='/eventData' element={<EventData height='74vh' width='48vw' />}></Route>
               <Route exact path='/addEvent' element={<AddEventForm height='74vh' width='48vw' />}></Route>
             </Route>
