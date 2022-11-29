@@ -3,8 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import logo from "../images/books.png";
-
-
+import '../css/LoginPopup.css';
 
 function LoginPopup() {
   const [show, setShow] = useState(false);
@@ -14,9 +13,9 @@ function LoginPopup() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button id="loginButton" onClick={handleShow}>
         login
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

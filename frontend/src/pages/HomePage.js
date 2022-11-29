@@ -11,8 +11,9 @@ import { Flex, Text, Box } from '@chakra-ui/react'
         fix navbar
         optimize map
 */
-function HomePage() {
 
+function HomePage() {
+ 
     return (
         <Box bg='#326da8' h='100vh'>
             <NavbarExample />
@@ -42,4 +43,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePage; 

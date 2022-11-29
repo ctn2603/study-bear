@@ -1,33 +1,27 @@
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import logo from "../images/books.png";
+import logo from "../images/logo.png";
 import ToggleButton from "./ToggleButton";
-import LoginPopup from "./LoginPopup";
+import '../css/Navbar.css';
 
-console.log(logo); 
 
-function NavbarExample() {
+
+function Navbar() {
   return (
-    <Navbar bg="light" variant="light">
-      <Container>
-        <img
+    <div id="background">
+      <img    id="logo"
               src={logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-              alt="books emoji"
+              width="40"
+              alt="logo"
             />
-        <Navbar.Brand href="/home">app name</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <LoginPopup />
-          <Navbar.Brand  href="/signup">Signup
-          </Navbar.Brand>
-          <ToggleButton /> 
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <div id = "buttonContainer">
+        <button id ="loginButton"> login </button>
+        <button id ="signupButton"> signup </button>
+
+      </div>
+      
+    </div>
+      
   );
 }
 
-export default NavbarExample;
+export default Navbar;
