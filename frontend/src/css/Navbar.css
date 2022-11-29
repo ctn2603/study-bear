@@ -1,0 +1,40 @@
+
+#background {
+    background-color: #f9fb03;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+#logo {
+    margin-left: 20px;
+}
+
+button {
+    border: 0px;
+    padding: 8px;
+}
+
+#loginButton {
+    background-color: white;
+    color: #0327d6;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#signupButton {
+    background-color: #0327d6;
+    color: white;
+    margin-left: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    border-radius: 0px;
+
+}
+
+#buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}

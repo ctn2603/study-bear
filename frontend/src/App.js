@@ -6,6 +6,7 @@ import EventContainer from './components/eventContainer';
 import EventData from './components/eventData';
 import AddEventForm from './components/addEventForm';
 import { useEffect, useState, createContext } from 'react'
+import SignUpForm from './components/SignUpForm';
 
 
 const events = [
@@ -100,7 +101,7 @@ function App() {
               <Route exact path='/eventData' element={<EventData height='74vh' width='48vw' />}></Route>
               <Route exact path='/addEvent' element={<AddEventForm height='74vh' width='48vw' />}></Route>
             </Route>
-            <Route exact path='/signup' element={<div>sign up screen</div>}></Route>
+            <Route exact path='/signup' element={<div><SignUpForm/></div>}></Route>
           </Routes>
 
           </div>
