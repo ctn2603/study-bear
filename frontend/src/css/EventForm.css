@@ -1,7 +1,7 @@
 .form {
-    width: 35%;
+    width: 33%;
     color: white;
-    margin-left: 5%;
+    margin-left: 3%;
     text-align: left;
     border-radius: 1%;
     height: 100%;
@@ -12,6 +12,7 @@
     padding: 2%;
     text-align: left;
     border-radius: 1%;
+    padding-bottom: 5%;
 
 }
 .row {
