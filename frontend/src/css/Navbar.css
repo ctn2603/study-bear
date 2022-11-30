@@ -24,6 +24,12 @@ button {
     background-color: white;
     color: #0327d6;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    border-width: 0px;
+
+}
+#loginButton:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 #signupButton {
@@ -32,6 +38,13 @@ button {
     margin-left: 10px;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     border-radius: 0px;
+    border-width: 0px;
+
+
+}
+
+#signupButton:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
