@@ -18,7 +18,7 @@
                 a href=""
               /></a>
         <div id = "buttonContainer">
-          <button id ="loginButton"> login </button>
+          <LoginPopup id="loginButton"/>
           <Button id ="signupButton" href="/signup"> signup </Button>
 
 
