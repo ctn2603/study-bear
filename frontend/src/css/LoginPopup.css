@@ -59,4 +59,12 @@ button {
     border-radius: 0px;
     border-radius: 0px;
     border-width: 0px;
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.text {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: black;
+  margin-bottom: 10px;
 }

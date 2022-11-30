@@ -19,8 +19,8 @@ function LoginPopup() {
         login
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={show} onHide={handleClose} id= "popUp">
+        <Modal.Header closeButton id="header">
         <img
               src={logo}
               width="30"
@@ -32,7 +32,7 @@ function LoginPopup() {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>username</Form.Label>
+              <Form.Label class = "text">username</Form.Label>
               <Form.Control
                 type="username"
                // placeholder=""
@@ -40,7 +40,7 @@ function LoginPopup() {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>password</Form.Label>
+              <Form.Label class = "text">password</Form.Label>
               <Form.Control
                 type="password"
                // placeholder=""
@@ -49,12 +49,9 @@ function LoginPopup() {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-         
-          <Button variant="primary" type = "login" onClick={handleClose} id="submitFormButton">
+        <Button variant="primary" type = "login" onClick={handleClose} id="submitFormButton">
             login
           </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
