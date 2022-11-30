@@ -7,6 +7,7 @@ import EventData from './components/eventData';
 import AddEventForm from './components/addEventForm';
 import { useEffect, useState, createContext } from 'react'
 import SignUpForm from './components/SignUpForm';
+import axios from 'axios'
 
 //hi wahats up
 const events = [
@@ -57,13 +58,10 @@ const events = [
 
 
 
-
-
-
   const stateInit = {
-    events: events,
+    events: [],
     //For eventCreation (event ID is simply array index)
-    nextId:4,
+    nextId: 0,
     //The following are for marker logic
     recentClickPos: null,
     infoBoxId:null,
@@ -75,6 +73,17 @@ const events = [
 const StateContext = createContext()
 
 function App() {
+  const [state, setState] = useState(stateInit)
+    useEffect(()=>{
+      axios.get('https://fsdc18.azurewebsites.net/api/get-events', {timeout: 10 * 1000}).then((body)=>{
+        console.log("body of api call", body.data)
+        state.events = body.data
+        setState(JSON.parse(JSON.stringify(state)))
+      })
+    }, []
+    )
+
+
     /*api call will go here under a call using the useEffect hook 
      data will go under state variable, which will be accessible to all components
      in the react-app via context hook.
@@ -87,7 +96,7 @@ function App() {
      when updating state, make sure to call: setState(JSON.parse(JSON.stringify(state)))
      otherwise, nothing will re-render. <-took waayy to long to figure that out :)
     */
-  const [state, setState] = useState(stateInit)
+
     return (
       <StateContext.Provider value={{state:state, setState: setState}}>
         <Router>
@@ -97,7 +106,7 @@ function App() {
     
           <Routes>
             <Route exact path='/' element={<HomePage/>}>
-              <Route exact path='/' element={<EventContainer height='69vh' width='35vw' />}></Route>
+              <Route exact path='/' element={<EventContainer height='62vh' width='33vw' />}></Route>
               <Route exact path='/eventData' element={<EventData height='74vh' width='48vw' />}></Route>
               <Route exact path='/addEvent' element={<AddEventForm height='74vh' width='48vw' />}></Route>
             </Route>

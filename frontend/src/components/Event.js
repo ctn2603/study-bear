@@ -24,15 +24,16 @@ const Event = ({ item }) => {
           {item.location}  * {item.capacity - item.currCap} spots open
         </Text>
         <Box textAlign='left' fontFamily='Futura' mt='5'>
-          <Link to='/eventData' style={{textDecoration:'none'}}><Button
+          <Link to='/eventData' style={{textDecoration:'none'}}><Box
             style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}
             borderRadius='3' 
             bg='#0327D6'
             color='white'
             border='0'
             mb='0'
-            onClick={() => onClick(item)} textAlign='left' m='10' mt='3'
-            >More Info</Button></Link>
+            textAlign='center'
+            onClick={() => onClick(item)} h='10%' w='20%' m='10' mt='3'
+            >More Info</Box></Link>
         </Box>
       </Box>
     
