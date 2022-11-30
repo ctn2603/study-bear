@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import logo from "../images/logo.png";
+import '../css/LoginPopup.css'
 
 
 
@@ -14,7 +15,7 @@ function LoginPopup() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} id="loginButton">
         login
       </Button>
 
@@ -50,7 +51,7 @@ function LoginPopup() {
         </Modal.Body>
         <Modal.Footer>
          
-          <Button variant="primary" type = "login" onClick={handleClose}>
+          <Button variant="primary" type = "login" onClick={handleClose} id="submitFormButton">
             login
           </Button>
         </Modal.Footer>
