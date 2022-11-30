@@ -84,7 +84,7 @@ const testEvent = {
   id:3,
   lat: 37.87202,
   lng: -122.260679
-}
+} 
 /*
 delete all events: https://fsdc18.azurewebsites.net/api/delete-all-events (use axios.delete())
 delete all users: https://fsdc18.azurewebsites.net/api/delete-all-users
