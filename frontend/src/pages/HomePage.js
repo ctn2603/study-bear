@@ -20,7 +20,7 @@ function HomePage({height, width}) {
     return (
         <Box bg='#FAF9F6' h='90vh' fontFamily='Futura'>
 
-            <Flex direction='column' mt='20' mb='20' ml='13'>
+            <Flex direction='column' mb='20' ml='13' pt='19'>
                 <Box ml='9vw' mb='0' pb='0' textAlign='left'>
                     <Text mb='0' pb='0' fontSize='40px' mt='10' p='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
                 </Box>
@@ -30,7 +30,7 @@ function HomePage({height, width}) {
                 </Flex>
             </Flex>
 
-            <Flex justifyContent='center'>
+            <Flex justify='center'>
 
                 <Flex direction='column'>
                     <MapContainer height='60vh' width='45vw'/>

@@ -67,7 +67,11 @@ const events = [
     infoBoxId:null,
     markerEvent:null,
     //id of the event to be shown on <EventData />
-    eventDataId:null
+    eventDataId:null,
+    isLoggedIn: false,
+    userName:null,
+    password:null,
+    token:null
   }
 
 const StateContext = createContext()
@@ -107,7 +111,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<HomePage/>}>
               <Route exact path='/' element={<EventContainer height='62vh' width='33vw' />}></Route>
-              <Route exact path='/eventData' element={<EventData height='74vh' width='48vw' />}></Route>
+              <Route exact path='/eventData' element={<EventData height='74vh' width='33vw' />}></Route>
               <Route exact path='/addEvent' element={<AddEventForm height='74vh' width='48vw' />}></Route>
             </Route>
             <Route exact path='/signup' element={<div><SignUpForm/></div>}></Route>
