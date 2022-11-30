@@ -43,7 +43,7 @@ function EventContainer({ height, width }) {
         <Flex flexDirection="column" m="0" w="100%">
           <Box h="75vh" w="95%" borderRadius="20px">
             <Box>
-              <Text style={{'font-weight': 'bold'}}fontFamily='Futura' color='white' textAlign="left" marginLeft="25" fontSize="36px" p='10' pt='13' pb='0' mb='2'>
+              <Text style={{'font-weight': 'bold'}} fontFamily='Futura' color='white' textAlign="left" marginLeft="25" fontSize="36px" p='10' pt='13' pb='0' mb='2'>
                 Events
                 <Menu>
                   <MenuButton

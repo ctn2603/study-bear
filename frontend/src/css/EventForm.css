@@ -1,0 +1,20 @@
+.form {
+    background-color: #f5f640;
+    padding: 2%;
+    margin-left: 5%;
+    width: 45%;
+    height: 75%;
+    text-align: left;
+
+}
+
+.col-25{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-75{
+    float: right;
+    width: 75%;
+    margin-top: 6px;
+}
