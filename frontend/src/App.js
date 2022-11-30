@@ -67,8 +67,29 @@ const events = [
     infoBoxId:null,
     markerEvent:null,
     //id of the event to be shown on <EventData />
-    eventDataId:null
+    eventDataId:null,
+    isLoggedIn: false,
+    userName:null,
+    password:null,
+    token:null
   }
+
+const testEvent = {
+  title: "CS 61A Study Group",
+  time: "5:00PM - 6:00PM",
+  currCap: 10,
+  capacity: 10,
+  description: "brainstorming for Ants",
+  location: "Moffit Floor 5",
+  id:3,
+  lat: 37.87202,
+  lng: -122.260679
+} 
+/*
+delete all events: https://fsdc18.azurewebsites.net/api/delete-all-events (use axios.delete())
+delete all users: https://fsdc18.azurewebsites.net/api/delete-all-users
+add event: https://fsdc18.azurewebsites.net/api/add-event
+*/
 
 const StateContext = createContext()
 
@@ -80,6 +101,10 @@ function App() {
         state.events = body.data
         setState(JSON.parse(JSON.stringify(state)))
       })
+      axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{
+        console.log("delete response", response)
+      })
+
     }, []
     )
 
@@ -107,7 +132,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<HomePage/>}>
               <Route exact path='/' element={<EventContainer height='62vh' width='33vw' />}></Route>
-              <Route exact path='/eventData' element={<EventData height='74vh' width='48vw' />}></Route>
+              <Route exact path='/eventData' element={<EventData height='74vh' width='33vw' />}></Route>
               <Route exact path='/addEvent' element={<AddEventForm height='74vh' width='48vw' />}></Route>
             </Route>
             <Route exact path='/signup' element={<div><SignUpForm/></div>}></Route>

@@ -16,74 +16,33 @@ function EventData({height, width}) {
 
     const events = useContext(StateContext).state.events
     const data = events[useContext(StateContext).state.eventDataId]
-    console.log(data)
-    return ( 
-        <Box ml='15' h={height} w={width}>
-            <Flex w='100%'>
-                <Flex flexDirection='column' m='0' w='50%'>
-                    <Box h='35vh' w='95%' bg='#948585' mb='15' borderRadius='20px' className='boxShadow'>
-
-                        <Text mt='15' mb='10' textAlign='center'fontSize='17px' fontFamily='Arial'>
-                            {data.title}
-                        </Text>
-
-                        <Text ml='10' mb='0' fontSize='14px' fontFamily='Arial'>{'time: ' + data.time}</Text>
-                        <Text ml='10' mb='0' mt='1' fontSize='14px' fontFamily='Arial'>{'capacity: ' + data.capacity}</Text>
-                        <Text ml='10' mt='0' fontSize='14px' fontFamily='Arial'>{'location: ' + data.location}</Text>
-
-                        <Center>
-                            <Box h='17vh' w='85%' bg='#ccb4b4' borderRadius='15px' >
-                            <Text p='10' mt='4' fontFamily='Arial'>{data.description}</Text>
-                            </Box>
-                        </Center>
-                        
-
-                    </Box>
-
-                    <Box w='93%' h='24vh' mt='20' m='5' bg='#948585' borderRadius='20px' className='boxShadow'>
-                        <Text p='10' mb='0'>More Info</Text>
-                        <Text mt='0' p='10'>We are at the big table at the corner of the room. Don't be shy!</Text>
-                    </Box>
-
-                    <Flex mt='13' mb='8' align='center'>
-                        <Button w='46%' border='0' p='10' borderRadius='10' bg='#BAD9B5' className='boxShadow'>
-                            I'm Going
-                        </Button>
-                    
-
-                        <Link to='/' style={{width:'46%', textDecoration:'none'}}>
-                            <Button w='100%' border='0' p='10' ml='10' borderRadius='10' bg='#732C2C' className='boxShadow'>
-                                Back
-                            </Button>
-                        </Link>
     
-                    </Flex>
+    return (
+        <Flex h={height} w={width} direction='column' ml='30'>
+            <Box w='100%' h='55%' bg='#0E26CD' color='white' size={{'font-weight': 'bold'}} fontFamily='Futura' fontSize='24'>
+                <Text p='10'> {data.title} </Text>
 
-
-                </Flex>
-
-                <Box ml='0' w='50%' h='70vh' bg = '#948585' borderRadius='20' className='boxShadow'>
-                    <Text m='20' mb='12'>Images</Text>
-                    <Box h='85%' className='picScroll' style={{overflow:'auto'}}>
-                        <Box>
-                            <Image w='90%' mb='8' src={studying2} />
-                        </Box>  
-                        <Box>
-                            <Image w='90%' mt='8' mb='8' src={studying4} />
-                        </Box>
-                        <Box>
-                            <Image w='90%' mt='8' mb='8'src={studying3} />
-                        </Box>
-                        <Box>
-                            <Image w='90%' mt='8' src={studying1} />
-                        </Box>
-                        
-                    </Box>
-
+                <Box textAlign='left' m='30'>
+                    <Box fontSize='12'>{data.time}</Box>
+                    <Box fontSize='12'>{data.location}</Box>
+                    <Box fontSize='12'>Spots Open: {data.currCap} / {data.capacity}</Box>  
                 </Box>
-            </Flex>
 
-        </Box>
+                <Box w='90%' h='40%' bg='white' ml='23' align='left' color='black'>
+                    <Text fontSize='12px' p='8px' pb='0' mb='5'>Desciption:</Text>
+                    <Text fontSize='12px' ml='23' mt='0' pt='0'> {data.description} </Text>
+                </Box>
+            </Box>
+
+            <Box w='100%' h='15%' bg='#F9FB03' mt='20' fontSize='12px' textAlign='left'>
+                <Text p='10' pl='15'>More Info:</Text>
+            </Box>
+
+            <Flex w='100%' mt='20'>
+                <Box h='50' w='50%' style={{border: '1px solid #0E26CD'}}><Text mt='8'>I'm Going</Text></Box>
+                <Text h='50' ml='5' w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='8' color='white'>Back</Text></Link></Text>
+            </Flex>
+        </Flex>
     )
 }
 
