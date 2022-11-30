@@ -33,7 +33,7 @@ function AddEventForm({height, width}) {
             <h3>Add an event</h3>
             <h6><em>Click on Map to Select Location.</em></h6>
             <div class="input-box">
-                <input variant='outline' placeholder='title' type='text' onInput={
+                <input variant='outline' placeholder='Title' type='text' onInput={
                     (e) => updateBuild(e, 'title')
                 }/>
             </div>
@@ -238,7 +238,7 @@ function AddEventForm({height, width}) {
             </select>
             </div>
             <div class="input-box">
-                <input variant='outline' placeholder='Event Description' type='text' onInput={
+                <input variant='outline' placeholder='Event Description ' type='text' onInput={
                     (e) => updateBuild(e, 'description')
                 } />
             </div>
@@ -250,13 +250,14 @@ function AddEventForm({height, width}) {
                 <CheckIcon />
                 
             </Flex>
-            <div class="button">
-                <input type='submit' onClick={onSubmit}/>
+            <div class="button-container">
+                <input class="submit-button" type='submit' value='Post Event' onClick={onSubmit}/>
+                
+                <Link to='/'>
+                    <div class="back-button"> Go Back </div>
+                </Link>
             </div>
             
-            <Link to='/'>
-                <button> Go Back </button>
-            </Link>
         </div>
     )
 }
