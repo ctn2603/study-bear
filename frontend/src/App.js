@@ -8,7 +8,7 @@ import AddEventForm from './components/addEventForm';
 import { useEffect, useState, createContext } from 'react'
 import SignUpForm from './components/SignUpForm';
 
-
+//hi wahats up
 const events = [
     {
       title:'cs61c study group',
