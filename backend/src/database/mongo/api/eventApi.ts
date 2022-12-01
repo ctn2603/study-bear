@@ -12,4 +12,8 @@ function getEvents() {
 	return eventModel.find();
 }
 
-export { IEvent, addEvent, removeEvent, getEvents };
+function deleteAllEvents() {
+	return eventModel.deleteMany();
+}
+
+export { IEvent, addEvent, removeEvent, getEvents, deleteAllEvents };

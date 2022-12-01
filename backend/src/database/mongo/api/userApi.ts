@@ -18,4 +18,8 @@ function addUser(user: IUser) {
 	);
 }
 
-export { IUser, findUser, addUser };
+function deleteAllUsers() {
+	return userModel.deleteMany();
+}
+
+export { IUser, findUser, addUser, deleteAllUsers };

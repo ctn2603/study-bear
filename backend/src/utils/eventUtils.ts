@@ -13,4 +13,8 @@ function getEvents() {
 	return dbManager.getEvents();
 }
 
-export { addEvent, removeEvent, getEvents };
+function deleteAllEvents() {
+	return dbManager.deleteAllEvents();
+}
+
+export { addEvent, removeEvent, getEvents, deleteAllEvents };

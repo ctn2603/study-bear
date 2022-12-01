@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 // Setup middleware
 server.use(cors());
 server.use(express.json());
-server.use("/api", tokenValidator);
+// server.use("/api", tokenValidator);
 
 // Setup routers
 server.use(authRouter);
