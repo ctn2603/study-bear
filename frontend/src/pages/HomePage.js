@@ -33,7 +33,7 @@ function HomePage({height, width}) {
 
                 <Flex mr='9vw' ml='60'>
                     <Image h='18vh' p='0' m='0' mt='15' mr='35' src={circleIcon}/>
-                    <Box  h='19vh' maxW='10vw' mt='35' ml='50' textAlign='right' style={{'line-height': '16pt'}}>
+                    <Box  h='19vh' maxW='15vw' mt='35' ml='50' textAlign='right' style={{'line-height': '14pt'}}>
                         a website designed to help Berkeley students find
                         study groups around campus
                     </Box>
