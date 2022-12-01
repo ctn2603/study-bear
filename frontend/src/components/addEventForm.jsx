@@ -1,10 +1,11 @@
 import { useState, Context, useContext } from 'react'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Image } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
 import '../css/EventForm.css'
 import axios from 'axios';
+import arrow from '../images/arrow.png'
 
 function AddEventForm({height, width}) {
     const state = useContext(StateContext).state
@@ -46,6 +47,9 @@ function AddEventForm({height, width}) {
         
     }
     return (
+        <Flex direction='row'>
+        <Link to="/"><Image ml='20' mr='0' pr='0' h='35' w='35' src={arrow}/></Link>
+
         <div class="form">
         <div class="form-container">
             <h3>Add an event</h3>
@@ -285,6 +289,7 @@ function AddEventForm({height, width}) {
             </div>
             
         </div>
+        </Flex>
     )
 }
 
