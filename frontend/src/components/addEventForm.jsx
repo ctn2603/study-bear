@@ -3,13 +3,15 @@ import { Box, Flex } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
-import styles from '../css/EventForm.css'
+import '../css/EventForm.css'
+import axios from 'axios';
 
 function AddEventForm({height, width}) {
     const state = useContext(StateContext).state
     const setState = useContext(StateContext).setState
 
     const [buildEvent, setBuild] = useState({})
+
 
     const updateBuild = (e, attr) => {
         buildEvent[attr] = e.target.value
@@ -21,11 +23,27 @@ function AddEventForm({height, width}) {
         buildEvent.lat = state.recentClickPos.lat
         buildEvent.lng = state.recentClickPos.lng
         buildEvent.id = state.nextId
+        var event = {
+            "title": buildEvent.title,
+            "description": buildEvent.description,
+            "location": "mainstacks",
+            "time": buildEvent.time,
+            "currCap": buildEvent.currCap,
+            "capacity": buildEvent.capacity,
+            "major": buildEvent.major,
+            "id": buildEvent.id,
+            "lat": buildEvent.lat,
+            "lng": buildEvent.lng
+        }
         var ev = JSON.parse(JSON.stringify(buildEvent))
         state.events.push(ev)
         state.nextId = state.nextId + 1
         setState(JSON.parse(JSON.stringify(state)))
         console.log('in onsubmit', state)
+        axios.post("https://fsdc18.azurewebsites.net/api/add-event", event)
+        .then(console.log('in onsubmit', state))
+        .catch((error) => console.log(error));
+        
     }
     return (
         <div class="form">
@@ -33,27 +51,27 @@ function AddEventForm({height, width}) {
             <h3>Add an event</h3>
             <h6><em>Click on Map to Select Location.</em></h6>
             <div class="input-box">
-                <input variant='outline' placeholder='Title' type='text' onInput={
+                <input variant='outline' placeholder='Title' type='text' required onInput={
                     (e) => updateBuild(e, 'title')
                 }/>
             </div>
             <div class="input-box">
-                <input variant='outline' type='time' onInput={
+                <input variant='outline' type='time' required onInput={
                     (e) => updateBuild(e, 'time')
                 }/>
             </div>
             <div class="input-box">
-                <input  variant='outline' placeholder='Open Seats' type='number' onInput={
+                <input  variant='outline' placeholder='Open Seats' type='number' required onInput={
                     (e) => updateBuild(e, 'currCap')
                 }/>
             </div>
             <div class="input-box">
-                <input  variant='outline' placeholder='Total Seats' type='number' onInput={
+                <input  variant='outline' placeholder='Total Seats' type='number' required onInput={
                     (e) => updateBuild(e, 'capacity')
                 }/>
             </div>
             <div class="input-box">
-            <select onChange={(e) => updateBuild(e.target.value, 'major')}>
+            <select required onChange={(e) => updateBuild(e, 'major')}>
                 <option value="none">Select Major</option>
                 <option value="AEROENG">Aerospace Engineering</option>
                 <option value="AEROSPC">Aerospace Studies</option>
@@ -239,7 +257,7 @@ function AddEventForm({height, width}) {
             </select>
             </div>
             <div class="input-box">
-                <input variant='outline' placeholder='Event Description ' type='text' onInput={
+                <input variant='outline' placeholder='Event Description ' type='text' required onInput={
                     (e) => updateBuild(e, 'description')
                 } />
             </div>

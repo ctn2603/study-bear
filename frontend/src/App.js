@@ -18,6 +18,7 @@ const events = [
       time:'5-7pm',
       currCap:0,
       capacity:10,
+      major: 'COMPSCI',
       id:0,
       lat: 37.87292,
       lng: -122.260579
