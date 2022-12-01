@@ -96,148 +96,22 @@ export default GMap;
 
 /* Map Style Credit: SnazzyMaps.com */
 
-const darkMode = [
-  {
-      "featureType": "all",
-      "elementType": "geometry",
-      "stylers": [
-          {
-              "color": "#202c3e"
-          }
-      ]
-  },
-  {
-      "featureType": "all",
-      "elementType": "labels.text.fill",
-      "stylers": [
-          {
-              "gamma": 0.01
-          },
-          {
-              "lightness": 20
-          },
-          {
-              "weight": "1.39"
-          },
-          {
-              "color": "#ffffff"
-          }
-      ]
-  },
-  {
-      "featureType": "all",
-      "elementType": "labels.text.stroke",
-      "stylers": [
-          {
-              "weight": "0.96"
-          },
-          {
-              "saturation": "9"
-          },
-          {
-              "visibility": "on"
-          },
-          {
-              "color": "#000000"
-          }
-      ]
-  },
-  {
-      "featureType": "all",
-      "elementType": "labels.icon",
-      "stylers": [
-          {
-              "visibility": "off"
-          }
-      ]
-  },
-  {
-      "featureType": "landscape",
-      "elementType": "geometry",
-      "stylers": [
-          {
-              "lightness": 30
-          },
-          {
-              "saturation": "9"
-          },
-          {
-              "color": "#29446b"
-          }
-      ]
-  },
-  {
-      "featureType": "poi",
-      "elementType": "geometry",
-      "stylers": [
-          {
-              "saturation": 20
-          }
-      ]
-  },
-  {
-      "featureType": "poi.park",
-      "elementType": "geometry",
-      "stylers": [
-          {
-              "lightness": 20
-          },
-          {
-              "saturation": -20
-          }
-      ]
-  },
-  {
-      "featureType": "road",
-      "elementType": "geometry",
-      "stylers": [
-          {
-              "lightness": 10
-          },
-          {
-              "saturation": -30
-          }
-      ]
-  },
-  {
-      "featureType": "road",
-      "elementType": "geometry.fill",
-      "stylers": [
-          {
-              "color": "#193a55"
-          }
-      ]
-  },
-  {
-      "featureType": "road",
-      "elementType": "geometry.stroke",
-      "stylers": [
-          {
-              "saturation": 25
-          },
-          {
-              "lightness": 25
-          },
-          {
-              "weight": "0.01"
-          }
-      ]
-  },
-  {
-      "featureType": "water",
-      "elementType": "all",
-      "stylers": [
-          {
-              "lightness": -20
-          }
-      ]
-  }
-]
-
 const lightMode = [
     {
-        "featureType": "poi.attraction",
-        "elementType": "labels",
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#0327d6"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -245,8 +119,41 @@ const lightMode = [
         ]
     },
     {
-        "featureType": "poi.business",
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#f6f540"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#0327d6"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
         "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "labels.icon",
         "stylers": [
             {
                 "visibility": "off"
@@ -254,8 +161,8 @@ const lightMode = [
         ]
     },
     {
-        "featureType": "poi.government",
-        "elementType": "labels",
+        "featureType": "landscape.natural",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -263,26 +170,8 @@ const lightMode = [
         ]
     },
     {
-        "featureType": "poi.medical",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.place_of_worship",
-        "elementType": "labels",
+        "featureType": "poi",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -291,7 +180,52 @@ const lightMode = [
     },
     {
         "featureType": "poi.school",
-        "elementType": "labels",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#dfe2ff"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#0327d6"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -299,11 +233,14 @@ const lightMode = [
         ]
     },
     {
-        "featureType": "poi.sports_complex",
-        "elementType": "labels",
+        "featureType": "water",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
+            },
+            {
+                "color": "#0327d6"
             }
         ]
     }
