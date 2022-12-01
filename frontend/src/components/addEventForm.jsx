@@ -1,5 +1,5 @@
 import { useState, Context, useContext } from 'react'
-import { Box, Flex, Input, FormControl, FormLabel, Select } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
@@ -38,7 +38,7 @@ function AddEventForm({height, width}) {
                 }/>
             </div>
             <div class="input-box">
-                <input variant='outline' type='datetime-local' onInput={
+                <input variant='outline' type='time' onInput={
                     (e) => updateBuild(e, 'time')
                 }/>
             </div>
@@ -53,7 +53,8 @@ function AddEventForm({height, width}) {
                 }/>
             </div>
             <div class="input-box">
-            <select placeholder='Select Major' onInput={(e) => console.log(e.target.value)}>
+            <select onChange={(e) => updateBuild(e.target.value, 'major')}>
+                <option value="none">Select Major</option>
                 <option value="AEROENG">Aerospace Engineering</option>
                 <option value="AEROSPC">Aerospace Studies</option>
                 <option value="AFRICAM">African American Studies</option>

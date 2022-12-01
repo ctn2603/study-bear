@@ -10,6 +10,7 @@ const Event = ({ item }) => {
     state.eventDataId = item.id
     setState(JSON.parse(JSON.stringify(state)))
     console.log(state.eventDataId)
+
   }
 
   return (
@@ -19,6 +20,9 @@ const Event = ({ item }) => {
         </Text>
         <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
           {item.time}
+        </Text>
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
+          {item.major}
         </Text>
         <Text fontSize='16' textAlign="left" marginLeft={15} mb='0' fontFamily="Futura">
           {item.location}  * {item.capacity - item.currCap} spots open
