@@ -21,7 +21,7 @@ const Event = ({ item }) => {
           {item.time}
         </Text>
         <Text fontSize='16' textAlign="left" marginLeft={15} mb='0' fontFamily="Futura">
-          {item.location}  * {item.capacity - item.currCap} spots open
+          {item.location}  • {item.capacity - item.currCap} spots open
         </Text>
         <Box textAlign='left' fontFamily='Futura' mt='5'>
           <Link to='/eventData' style={{textDecoration:'none'}}><Box
