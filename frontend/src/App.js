@@ -101,9 +101,11 @@ function App() {
         state.events = body.data
         setState(JSON.parse(JSON.stringify(state)))
       })
+      /*
       axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{
         console.log("delete response", response)
       })
+      */
 
     }, []
     )
