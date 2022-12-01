@@ -10,29 +10,37 @@ const Event = ({ item }) => {
     state.eventDataId = item.id
     setState(JSON.parse(JSON.stringify(state)))
     console.log(state.eventDataId)
+
   }
 
   return (
-    <Center>
-      <Box margin={10} h="17vh" w="85%" bg='#4D9DE0' borderRadius="15px">
-        <Text textAlign="left" marginLeft={15} fontFamily="Arial">
+      <Box margin={10} h="16vh" w="30vw" bg='#FFFFFF' borderRadius="15px" ml='20' style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}>
+        <Text fontSize='18' textAlign="left" marginLeft={15} mb='0' pt='7' fontFamily="Futura">
           {item.title}
         </Text>
-        <Text textAlign="left" marginLeft={15} fontFamily="Arial">
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
           {item.time}
         </Text>
-        <Text textAlign="left" marginLeft={15} mb='0' fontFamily="Arial">
-          {item.location}
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
+          {item.major}
         </Text>
-        <Box textAlign='left'>
-          <Link to='/eventData'><Button borderRadius='10' 
-                                        bg='#D8315B'
-                                        color='white' 
-                                        onClick={() => onClick(item)} textAlign='left' m='10' mt='3'
-                                        >More Info</Button></Link>
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0' fontFamily="Futura">
+          {item.location}  • {item.capacity - item.currCap} spots open
+        </Text>
+        <Box textAlign='left' fontFamily='Futura' mt='5'>
+          <Link to='/eventData' style={{textDecoration:'none'}}><Box
+            style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}
+            borderRadius='3' 
+            bg='#0327D6'
+            color='white'
+            border='0'
+            mb='0'
+            textAlign='center'
+            onClick={() => onClick(item)} h='10%' w='20%' m='10' mt='3'
+            >More Info</Box></Link>
         </Box>
       </Box>
-    </Center>
+    
   );
 };
 export default Event;

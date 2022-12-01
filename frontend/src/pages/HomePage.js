@@ -18,14 +18,23 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
 function HomePage({height, width}) {
 
     return (
-        <Box bg='#FAF9F6' h='100vh'>
+        <Box bg='#FAF9F6' h='90vh' fontFamily='Futura'>
 
-            <Text fontSize='30px' m='10'>Welcome to StudyBear!</Text>
+            <Flex direction='column' mb='20' ml='13' pt='19'>
+                <Box ml='9vw' mb='0' pb='0' textAlign='left'>
+                    <Text mb='0' pb='0' fontSize='40px' mt='10' p='0' color='#0327D6' style={{'font-weight': 'bold'}}>Welcome To</Text>
+                </Box>
+                <Flex ml='9vw' mt='0' pt='0'>
+                    <Text mt='0' pt='0' fontSize='40px' color='#0327D6' style={{'font-weight': 'bold'}}>Study</Text>
+                    <Text fontSize='40px' color='#429AFD' style={{'font-weight': 'bold'}}>Bear</Text>
+                </Flex>
+            </Flex>
 
-            <Flex justifyContent='center'>
+            <Flex justify='center'>
 
-                <MapContainer height='75vh' width='45vw'/>
-            
+                <Flex direction='column'>
+                    <MapContainer height='60vh' width='45vw'/>
+                </Flex>
 
                 {/* EventData is a placeholder for EventContainer
                     This Component will change when switching between:
@@ -39,13 +48,6 @@ function HomePage({height, width}) {
                     height/width parameters, which are passed in as props like below.
                 */}
                 <Outlet />
-            </Flex>
-            
-            <Flex align='center'>
-                <Link to='/addEvent'>
-                    <PlusSquareIcon ml='30' color='#0A2463' h='70' w='70' />
-                </Link>
-                <Box color='white'>{'<-- add an event!'}</Box>
             </Flex>
 
             

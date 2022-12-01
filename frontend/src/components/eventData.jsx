@@ -1,7 +1,12 @@
-import { Box, Text, Flex, Center} from '@chakra-ui/react'
+import { Box, Text, Flex, Center, Button, Image } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { StateContext } from '../App'
+import studying1 from '../images/studying1.png'
+import studying2 from '../images/studying2.png'
+import studying3 from '../images/studying3.png'
+import studying4 from '../images/studying4.png'
+import '../css/EventData.css'
 /* 
     TODO:
         make this more resizable
@@ -11,53 +16,33 @@ function EventData({height, width}) {
 
     const events = useContext(StateContext).state.events
     const data = events[useContext(StateContext).state.eventDataId]
-    console.log(data)
-    return ( 
-        <Box ml='15' h={height} w={width}>
-            <Flex w='100%'>
-                <Flex flexDirection='column' m='0' w='50%'>
-                    <Box h='35vh' w='95%' bg='#948585' borderRadius='20px'>
+    
+    return (
+        <Flex h={height} w={width} direction='column' ml='30'>
+            <Box w='100%' h='55%' bg='#0E26CD' color='white' size={{'font-weight': 'bold'}} fontFamily='Futura' fontSize='24'>
+                <Text p='10'> {data.title} </Text>
 
-                        <Text textAlign='center'fontSize='17px' fontFamily='Arial'>
-                            {data.title}
-                        </Text>
-
-                        <Text ml='10' mb='0' fontSize='14px' fontFamily='Arial'>{data.time}</Text>
-                        <Text ml='10' mb='0' mt='1' fontSize='14px' fontFamily='Arial'>{data.capacity}</Text>
-                        <Text ml='10' mt='0' fontSize='14px' fontFamily='Arial'>{data.location}</Text>
-
-                        <Center>
-                            <Box h='17vh' w='85%' bg='#ccb4b4' borderRadius='15px' >
-                            <Text p='10' mt='4' fontFamily='Arial'>{data.description}</Text>
-                            </Box>
-                        </Center>
-                        
-
-                    </Box>
-
-                    <Flex mt='13' mb='8'>
-                        <Box bg='#e6a3a3' w='90%' mr='5' ml='10' borderRadius='10'>
-                            <Text m='13' alignSelf='center'>I'm Going!</Text>
-                        </Box>
-
-                        <Box bg='#8a5757' w='90%' mr='12' ml='10' borderRadius='10'>
-                            <Link to='/'><Text m='13' alignSelf='center'>Back</Text></Link>
-                        </Box>
-                    </Flex>
-
-                    <Box w='93%' h='26vh' mt='20' m='5' bg='#948585' borderRadius='20px'>
-                        <Text p='10'>More Info</Text>
-                    </Box>
-
-                </Flex>
-
-                <Box ml='0' w='50%' h='70vh' bg = '#948585' borderRadius='20'>
-                    <Text m='20'>Group Chat</Text>
-
+                <Box textAlign='left' m='30'>
+                    <Box fontSize='12'>{data.time}</Box>
+                    <Box fontSize='12'>{data.location}</Box>
+                    <Box fontSize='12'>Spots Open: {data.currCap} / {data.capacity}</Box>  
                 </Box>
-            </Flex>
 
-        </Box>
+                <Box w='90%' h='40%' bg='white' ml='23' align='left' color='black'>
+                    <Text fontSize='12px' p='8px' pb='0' mb='5'>Desciption:</Text>
+                    <Text fontSize='12px' ml='23' mt='0' pt='0'> {data.description} </Text>
+                </Box>
+            </Box>
+
+            <Box w='100%' h='15%' bg='#F9FB03' mt='20' fontSize='12px' textAlign='left'>
+                <Text p='10' pl='15'>More Info:</Text>
+            </Box>
+
+            <Flex w='100%' mt='20'>
+                <Box h='50' w='50%' style={{border: '1px solid #0E26CD'}}><Text mt='8'>I'm Going</Text></Box>
+                <Text h='50' ml='5' w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='8' color='white'>Back</Text></Link></Text>
+            </Flex>
+        </Flex>
     )
 }
 
