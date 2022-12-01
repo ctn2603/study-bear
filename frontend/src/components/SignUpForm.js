@@ -4,15 +4,65 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import { json, Link } from 'react-router-dom';
 import '../css/SignUpForm.css';
 import studybear from '../images/studybear.png';
+import axios from 'axios';
+import { Box } from '@chakra-ui/react'
 
+const SignUpForm = () => {
+  const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+  
+  const onSubmit = ({getData}) => {
+    console.log("data", {
+      email,
+      username,
+      password
+    })
+
+    
+    axios
+    .post("https://fsdc18.azurewebsites.net/api/signup", {email, username, password })
+    .then(getData)
+    .catch((error) => console.log(error));
+  }
+  
+  
+  return (<div id ="bigDiv">
+   
+    <img src={studybear} id= "studybearLogo"/>
+
+    <div id="backgroundDiv"> 
+    <h1 id= "signUpTitle"> sign up </h1>
+    
+    <input type="text" class= "textField" value={email} placeholder=" email" onChange={e => setEmail(e.target.value)}  />
+
+    <input type="text" class= "textField" value={username} placeholder=" username" onChange={e => setUsername(e.target.value)}  />
+
+    <input type="password" class= "textField" value={password} placeholder=" password" onChange={e => setPassword(e.target.value)}  />   
+    
+    </div>
+
+    <Link to='/'><button onClick={onSubmit} id="submitButton">submit</button></Link>
+
+  </div>)
+    
+}
+  
+
+
+
+/*
 function SignUpForm() {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
+    event
     const form = event.currentTarget;
+
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -20,6 +70,7 @@ function SignUpForm() {
 
     setValidated(true);
   };
+  
 
   return (
     <div id="bigDiv">
@@ -45,6 +96,8 @@ function SignUpForm() {
               placeholder="username"
               aria-describedby="inputGroupPrepend"
               required
+              
+              
             />
             <Form.Control.Feedback type="invalid">
               Please choose a username.
@@ -62,11 +115,11 @@ function SignUpForm() {
       </div>
     </Form>
     <a href= "http://localhost:3000/">
-      <button id="submitButton">submit</button>
+      <button type="submit" id="submitButton">submit</button>
     </a>
 
     </div>
   );
-}
+}*/
 
 export default SignUpForm;
