@@ -18,7 +18,7 @@ function GMap({height, width, setEvent, setActiveBoxData}){
     const setState = useContext(StateContext).setState
     const events = state.events
     
-    console.log('Rendering: ', state)
+    
     //useEffect(()=>(console.log('changing stuff')), [events])
 
   const [mapref, setMapRef] = useState(null);
@@ -30,7 +30,6 @@ function GMap({height, width, setEvent, setActiveBoxData}){
   const handleCenterChanged = () => {
     if (mapref) {
       const newCenter = mapref.getCenter();
-      console.log(newCenter)
     }
   };
   
@@ -45,7 +44,6 @@ function GMap({height, width, setEvent, setActiveBoxData}){
     }
     setEvent(e)
     state.infoBoxId = event.id
-    console.log('setstuff', e, event)
     setState(JSON.parse(JSON.stringify(state)))
   }
 
@@ -67,7 +65,6 @@ function GMap({height, width, setEvent, setActiveBoxData}){
         }
         state.recentClickPos = pos
         setState(state)
-        console.log(state.recentClickPos)
     }
 
 

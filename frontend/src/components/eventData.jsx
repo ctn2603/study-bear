@@ -22,10 +22,11 @@ function EventData({height, width}) {
             <Box w='100%' h='55%' bg='#0E26CD' color='white' size={{'font-weight': 'bold'}} fontFamily='Futura' fontSize='24'>
                 <Text p='10'> {data.title} </Text>
 
-                <Box textAlign='left' m='30'>
-                    <Box fontSize='12'>{data.time}</Box>
+                <Box textAlign='left' m='30' mb='25'>
+                    <Box fontSize='12'>now - {data.time}</Box>
                     <Box fontSize='12'>{data.location}</Box>
-                    <Box fontSize='12'>Spots Open: {data.currCap} / {data.capacity}</Box>  
+                    <Box fontSize='12'>Spots Open: {data.currCap} / {data.capacity}</Box> 
+                    <Box fontSize='12'>Major: {data.major}</Box>
                 </Box>
 
                 <Box w='90%' h='40%' bg='white' ml='23' align='left' color='black'>

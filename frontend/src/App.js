@@ -102,6 +102,8 @@ function App() {
         console.log("body of api call", body.data)
         state.events = body.data
         setState(JSON.parse(JSON.stringify(state)))
+        console.log('new state', state)
+        console.log('state is set')
       })
       /*
       axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{

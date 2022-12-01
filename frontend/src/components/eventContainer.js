@@ -18,12 +18,15 @@ import { useContext } from 'react'
 import { StateContext } from "../App";
 import '../css/EventContainer.css'
 import filterIcon from '../images/filterIcon.png'
+import axios from 'axios'
 /* 
     TODO:
         make this more resizable
 
 */
 function EventContainer({ height, width }) {
+  console.log('rendering event container')
+
   const data = useContext(StateContext).state.events
 
   const [item, setItem] = useState(data);

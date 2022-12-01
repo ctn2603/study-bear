@@ -26,14 +26,14 @@ function AddEventForm({height, width}) {
         var event = {
             "title": buildEvent.title,
             "description": buildEvent.description,
-            "location": "mainstacks",
             "time": buildEvent.time,
             "currCap": buildEvent.currCap,
             "capacity": buildEvent.capacity,
             "major": buildEvent.major,
             "id": buildEvent.id,
             "lat": buildEvent.lat,
-            "lng": buildEvent.lng
+            "lng": buildEvent.lng,
+            "location": buildEvent.location
         }
         var ev = JSON.parse(JSON.stringify(buildEvent))
         state.events.push(ev)
@@ -70,6 +70,13 @@ function AddEventForm({height, width}) {
                     (e) => updateBuild(e, 'capacity')
                 }/>
             </div>
+
+            <div class="input-box">
+                <input  variant='outline' placeholder='room/floor (optional)' type='text' required onInput={
+                    (e) => updateBuild(e, 'location')
+                }/>
+            </div>
+
             <div class="input-box">
             <select required onChange={(e) => updateBuild(e, 'major')}>
                 <option value="none">Select Major</option>
