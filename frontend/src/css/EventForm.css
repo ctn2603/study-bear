@@ -1,0 +1,77 @@
+.form {
+    width: 33%;
+    color: white;
+    margin-left: 3%;
+    text-align: left;
+    border-radius: 1%;
+    height: 100%;
+}
+.form-container {
+    background-color: #0327D6;
+    color: white;
+    padding: 2%;
+    text-align: left;
+    border-radius: 1%;
+    padding-bottom: 5%;
+
+}
+.row {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2%;
+
+}
+.row label {
+    flex: 2;
+}
+.row input {
+    flex: 6;
+    box-shadow: 1px 1px 2px #0000;
+
+}
+.row select {
+    box-shadow: 1px 1px 2px #0000;
+    flex: 6;
+}
+input[type="submit"]{
+    background: #0327D6;
+    float: left;
+    width: 48%;
+    color: white;
+    margin-right: 2%;
+    padding: 2%;
+}
+input:hover[type="submit"]{
+    background: white;
+    color: black;
+}
+h6 {
+    padding-top: 3%;
+}
+.input-box {
+    padding-top: 3%;
+}
+.input-box input {
+    width: 75%;
+}
+.input-box select {
+    width: 75%;
+}
+
+.back-button{
+    background-color: white;
+    border-color: #0327D6;
+    border-style: solid;
+    width: 48%;
+    float: right;
+    margin-left: 2%;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    color: #0327D6;
+}
+.back-button:hover {
+    border-color: white;
+    background-color: #0327D6;
+    color: white;
+}
