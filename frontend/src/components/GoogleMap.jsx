@@ -2,6 +2,7 @@ import {React, useState, useEffect, useContext} from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF, InfoBox } from '@react-google-maps/api';
 import { Box, Text, Flex, Spacer} from '@chakra-ui/react'
 import { StateContext } from '../App';
+import { Link } from 'react-router-dom';
 /* tutorial:
     https://medium.com/@allynak/how-to-use-google-map-api-in-react-app-edb59f64ac9d
 
@@ -84,7 +85,6 @@ function GMap({height, width, setEvent, setActiveBoxData}){
       >
         {events.map((event) => (
             <MarkerF position={{lat: event.lat, lng:event.lng}} onMouseOver={(e)=>(setEventAndId(event, e))} onMouseOut={()=> mouseOut()}>
-        
             </MarkerF>
         ))}
       </GoogleMap>
