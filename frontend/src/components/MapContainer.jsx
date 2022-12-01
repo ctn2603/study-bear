@@ -3,7 +3,7 @@ import GMap from './GoogleMap'
 import { Box, Text, Flex} from '@chakra-ui/react'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
-import { PlusSquareIcon } from '@chakra-ui/icons'
+import { PlusSquareIcon, AddIcon } from '@chakra-ui/icons'
 
 const EventContext = createContext(null)
 
@@ -40,8 +40,8 @@ function MapContainer({height, width}) {
 
             <Box style={{position:'absolute', zIndex:'999', top:'84%', right:'88%'}}>
                 <Flex mt='5'>
-                    <Link to='/addEvent'>
-                        <PlusSquareIcon ml='20' bg='#F9FB03' p='0' color='#0327D6' h='70' w='70' />
+                    <Link to='/addEvent' style={{'text-decoration':'none'}}>
+                        <AddIcon h='70' w='70' bg='#F9FB03' color='#0E26CD' p='15'/>
                     </Link>
                 </Flex>
             </Box>
