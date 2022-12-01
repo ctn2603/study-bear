@@ -79,6 +79,7 @@ const testEvent = {
   time: "5:00PM - 6:00PM",
   currCap: 10,
   capacity: 10,
+  major:'computer science',
   description: "brainstorming for Ants",
   location: "Moffit Floor 5",
   id:3,
@@ -101,9 +102,11 @@ function App() {
         state.events = body.data
         setState(JSON.parse(JSON.stringify(state)))
       })
+      /*
       axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{
         console.log("delete response", response)
       })
+      */
 
     }, []
     )
