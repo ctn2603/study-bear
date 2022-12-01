@@ -72,11 +72,12 @@ function EventContainer({ height, width }) {
     return false
   }
   const validateTime = (t) => {
-    let t1 = (parseInt(t[0] + t[1]) * 60) + parseInt(t[3] + t[4])
-    let t2 = (parseInt(time[0] + time[1]) * 60) + parseInt(time[3] + time[4])
     if (time == null) {
+      console.log(time)
       return true
     }
+    let t1 = (parseInt(t[0] + t[1]) * 60) + parseInt(t[3] + t[4])
+    let t2 = (parseInt(time[0] + time[1]) * 60) + parseInt(time[3] + time[4])
     if (t1 <= t2){
       return true
     }
