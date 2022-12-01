@@ -79,6 +79,7 @@ const testEvent = {
   time: "5:00PM - 6:00PM",
   currCap: 10,
   capacity: 10,
+  major:'computer science',
   description: "brainstorming for Ants",
   location: "Moffit Floor 5",
   id:3,
