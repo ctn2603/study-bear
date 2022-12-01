@@ -83,7 +83,7 @@ function AddEventForm({height, width}) {
 
             <div class="input-box">
             <select required onChange={(e) => updateBuild(e, 'major')}>
-                <option value="none">Select Major</option>
+                <option value="none">Select Subject</option>
                 <option value="AEROENG">Aerospace Engineering</option>
                 <option value="AEROSPC">Aerospace Studies</option>
                 <option value="AFRICAM">African American Studies</option>
