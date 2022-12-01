@@ -9,13 +9,17 @@ import '../css/SignUpForm.css';
 import studybear from '../images/studybear.png';
 import axios from 'axios';
 import { Box } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { StateContext } from "../App";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-  
+  const state = useContext(StateContext).state
+  const setState = useContext(StateContext).setState
+
   const onSubmit = ({getData}) => {
     console.log("data", {
       email,
@@ -25,8 +29,11 @@ const SignUpForm = () => {
 
     
     axios
-    .post("https://fsdc18.azurewebsites.net/api/signup", {email, username, password })
-    .then(getData)
+    .post("https://fsdc18.azurewebsites.net/signup", {email, username, password })
+    .then((response)=>{
+      state.isLoggedIn = true;
+      setState(JSON.parse(JSON.stringify(state)));
+    })
     .catch((error) => console.log(error));
   }
   
