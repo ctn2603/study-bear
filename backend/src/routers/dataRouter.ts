@@ -50,4 +50,26 @@ dataRouter.get("/get-events", (req, res) => {
 		});
 });
 
+dataRouter.delete("/delete-all-events", (req, res) => {
+	return utils
+		.deleteAllEvents()
+		.then(() => {
+			res.sendStatus(200);
+		})
+		.catch((error: any) => {
+			res.status(500).send(error);
+		});
+});
+
+dataRouter.delete("/delete-all-users", (req, res) => {
+	return utils
+		.deleteAllUsers()
+		.then(() => {
+			res.sendStatus(200);
+		})
+		.catch((error: any) => {
+			res.status(500).send(error);
+		});
+});
+
 export { dataRouter };

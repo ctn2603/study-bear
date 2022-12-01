@@ -7,6 +7,7 @@ interface IEvent {
 	time: string;
 	currCap: number;
 	capacity: number;
+	major: string;
 	id: number;
 	lat: number;
 	lng: number;
@@ -36,6 +37,10 @@ const eventSchema = new Schema<IEvent>({
 	capacity: {
 		type: Number,
 		required: true,
+	},
+	major: {
+		type: String,
+		required: true
 	},
 	id: {
 		type: Number,

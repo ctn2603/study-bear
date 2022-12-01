@@ -1,6 +1,6 @@
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import * as db from "../database";
+import * as dbManager from "../database";
 import { IUser } from "../database";
 
 function generateToken(email: string, password: string): Promise<string> {
@@ -13,7 +13,7 @@ function generateToken(email: string, password: string): Promise<string> {
 }
 
 function addUser(user: IUser) {
-	return db
+	return dbManager
 		.findUser(user.email)
 		.then((user: any) => {
 			if (user) return Promise.reject("Account Existed"); // Not exist
@@ -21,7 +21,7 @@ function addUser(user: IUser) {
 		})
 		.then((salt: string) => bcryptjs.hash(user.password, salt))
 		.then((hashedPassword: string) =>
-			db.addUser({
+			dbManager.addUser({
 				username: user.username,
 				email: user.email,
 				password: hashedPassword,
@@ -30,10 +30,14 @@ function addUser(user: IUser) {
 }
 
 function isValidUser(email: string, password: string) {
-	return db.findUser(email).then((user: any) => {
+	return dbManager.findUser(email).then((user: any) => {
 		if (user) return bcryptjs.compare(password, user.password);
 		return Promise.reject("Invalid Account");
 	});
 }
 
-export { addUser, isValidUser, generateToken };
+function deleteAllUsers() {
+	return dbManager.deleteAllUsers();
+}
+
+export { addUser, isValidUser, generateToken, deleteAllUsers };
