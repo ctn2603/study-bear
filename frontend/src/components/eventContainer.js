@@ -15,7 +15,7 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 import Event from "./Event";
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { StateContext } from "../App";
 import '../css/EventContainer.css'
 import filterIcon from '../images/filterIcon.png'
@@ -26,7 +26,11 @@ import axios from 'axios'
 
 */
 function EventContainer({ height, width }) {
+  
   console.log('rendering event container')
+
+  const state = useContext(StateContext).state
+  const setState = useContext(StateContext).setState
 
   const data = useContext(StateContext).state.events
 
@@ -54,6 +58,25 @@ function EventContainer({ height, width }) {
     }
     setItem(newData)
   }
+
+  useEffect(()=>{
+    axios.get('https://fsdc18.azurewebsites.net/api/get-events', {timeout: 10 * 1000}).then((body)=>{
+      console.log("body of api call", body.data)
+      state.events = body.data
+      setState(JSON.parse(JSON.stringify(state)))
+      setItem(state.events)
+      console.log('new state', state)
+      console.log('state is set')
+      
+    })
+    /*
+    axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{
+      console.log("delete response", response)
+    })
+    */
+
+  }, []
+  )
 
   return (
 

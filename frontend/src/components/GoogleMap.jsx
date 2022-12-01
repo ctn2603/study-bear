@@ -31,7 +31,6 @@ function GMap({height, width, setEvent, setActiveBoxData}){
   const handleCenterChanged = () => {
     if (mapref) {
       const newCenter = mapref.getCenter();
-
     }
   };
   
