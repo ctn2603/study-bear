@@ -1,10 +1,11 @@
 .form {
-    width: 33%;
+    width: 40vw;
     color: white;
     margin-left: 3%;
     text-align: left;
     border-radius: 1%;
     height: 100%;
+    padding-right: 0px
 }
 .form-container {
     background-color: #0327D6;

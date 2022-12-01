@@ -49,20 +49,46 @@ function EventContainer({ height, width }) {
   const [time, setTime] = useState(null)
 
   const filter = () => {
+    console.log("time", time)
+    console.log("major", major)
+
     const newData = []
     for (var i = 0; i < data.length; i++) {
       var e = data[i]
-      if (e.major == major) {
+      if (validateMajor(e.major) && validateTime(e.time)) {
         newData.push(e)
       }
     }
     setItem(newData)
   }
 
+  const validateMajor = (maj) => {
+    if (major == null) {
+      return true
+    }
+    if (maj == major) {
+      return true
+    }
+    return false
+  }
+  const validateTime = (t) => {
+    let t1 = (parseInt(t[0] + t[1]) * 60) + parseInt(t[3] + t[4])
+    let t2 = (parseInt(time[0] + time[1]) * 60) + parseInt(time[3] + time[4])
+    if (time == null) {
+      return true
+    }
+    if (t1 <= t2){
+      return true
+    }
+    return false
+  }
+
+
   useEffect(()=>{
     axios.get('https://fsdc18.azurewebsites.net/api/get-events', {timeout: 10 * 1000}).then((body)=>{
       console.log("body of api call", body.data)
       state.events = body.data
+      state.nextId = state.events.length
       setState(JSON.parse(JSON.stringify(state)))
       setItem(state.events)
       console.log('new state', state)
@@ -98,7 +124,7 @@ function EventContainer({ height, width }) {
                     size="lg"
                     variant="outline"
                   />
-                  <MenuList bg='white' borderWidth='10' bordercolor='black'>
+                  <MenuList bg='white' style={{border:'2px solid black', 'font-size': '20px'}}>
                   <Flex direction='column' w='20vw' p='10'>
                   <Box color='black' fontSize='15' textAlign='center'>Major:</Box>
                   <select required onChange={(e) => (setMajor(e.target.value))}>
