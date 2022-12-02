@@ -76,7 +76,7 @@ function AddEventForm({height, width}) {
             </div>
 
             <div class="input-box">
-                <input  variant='outline' placeholder='room/floor (optional)' type='text' required onInput={
+                <input  variant='outline' placeholder='Room/Floor' type='text' required onInput={
                     (e) => updateBuild(e, 'location')
                 }/>
             </div>
