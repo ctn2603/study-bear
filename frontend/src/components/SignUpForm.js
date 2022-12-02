@@ -35,6 +35,7 @@ const SignUpForm = () => {
       setState(JSON.parse(JSON.stringify(state)));
     })
     .catch((error) => console.log(error));
+    state.isLoggedIn = true;
   }
   
   

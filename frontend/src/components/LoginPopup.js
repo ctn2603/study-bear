@@ -27,7 +27,7 @@ const LoginPopup = () => {
       email,
       password
     })
-
+    
     if(email!=undefined && password!=undefined){
       axios
       .post("https://fsdc18.azurewebsites.net/signin", {email, password})
@@ -36,6 +36,8 @@ const LoginPopup = () => {
         setState(JSON.parse(JSON.stringify(state)));
       })
       .catch((error) => console.log(error));
+      state.isLoggedIn = true;
+      setState(JSON.parse(JSON.stringify(state)));
     }
    
   }    
