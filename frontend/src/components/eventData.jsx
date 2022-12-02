@@ -18,6 +18,14 @@ function EventData({height, width}) {
 
     const events = useContext(StateContext).state.events
     const data = events[useContext(StateContext).state.eventDataId]
+    const setState = useContext(StateContext).setState
+    const state = useContext(StateContext).state
+    const id = useContext(StateContext).state.eventDataId
+    const ImGoing = () => {
+        events[id].currCap++
+        setState(JSON.parse(JSON.stringify(state)))
+        console.log("inside im going button", state)
+    }
     
     return (
         <Flex direction='row'>
@@ -44,7 +52,7 @@ function EventData({height, width}) {
             </Box>
 
             <Flex w='100%' mt='20'>
-                <Text  id= "buttonCSS" h='50'  w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='10' color='white'>I'm Going</Text></Link></Text>
+                <Text  id= "buttonCSS" h='50'  w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='10' color='white' onClick={ImGoing}>I'm Going</Text></Link></Text>
 
                 <Box id= "buttonCSS" h='50' w='50%'  ml='10' style={{border: '2px solid #0E26CD'}}><Link to='/' style={{textDecoration:'none'}}><Text mt='10' color='#0327d6'>Back</Text></Link></Box>
 
