@@ -44,8 +44,10 @@ function EventData({height, width}) {
             </Box>
 
             <Flex w='100%' mt='20'>
-                <Box h='50' w='50%' style={{border: '1px solid #0E26CD'}}><Text mt='8'>I'm Going</Text></Box>
-                <Text h='50' ml='5' w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='8' color='white'>Back</Text></Link></Text>
+                <Text  id= "buttonCSS" h='50'  w='48%' bg='#0E26CD'><Link to='/' style={{textDecoration:'none'}}><Text mt='10' color='white'>I'm Going</Text></Link></Text>
+
+                <Box id= "buttonCSS" h='50' w='50%'  ml='10' style={{border: '2px solid #0E26CD'}}><Link to='/' style={{textDecoration:'none'}}><Text mt='10' color='#0327d6'>Back</Text></Link></Box>
+
             </Flex>
         </Flex>
         </Flex>
