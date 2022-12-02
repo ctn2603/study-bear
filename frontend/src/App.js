@@ -15,20 +15,22 @@ const events = [
       title:'cs61c study group',
       description:'we are studying for mt2 tmrw',
       location:'mainstacks',
-      time:'5-7pm',
+      time:'8:00pm',
       currCap:0,
       capacity:10,
+      major: 'COMPSCI',
       id:0,
       lat: 37.87292,
       lng: -122.260579
     },
     {
       title: "CS 70 Study Group",
-      time: "now - 8:00PM",
+      time: "8:00PM",
       currCap:0,
       capacity: 10,
       description: "studying for midterm tmrw",
       location: "Mainstacks Level C",
+      major: "COMPSCI",
       id:1,
       lat: 37.87202,
       lng: -122.260209
@@ -39,6 +41,7 @@ const events = [
       capacity: 10,
       description: "reviewing parallelism",
       location: "Moffit Floor 1",
+      major: "EECS",
       id:2,
       lat: 37.87202,
       lng: -122.260429
@@ -49,6 +52,7 @@ const events = [
       currCap: 10,
       capacity: 10,
       description: "brainstorming for Ants",
+      major: "EECS",
       location: "Moffit Floor 5",
       id:3,
       lat: 37.87202,
@@ -79,6 +83,7 @@ const testEvent = {
   time: "5:00PM - 6:00PM",
   currCap: 10,
   capacity: 10,
+  major:'computer science',
   description: "brainstorming for Ants",
   location: "Moffit Floor 5",
   id:3,
@@ -95,18 +100,6 @@ const StateContext = createContext()
 
 function App() {
   const [state, setState] = useState(stateInit)
-    useEffect(()=>{
-      axios.get('https://fsdc18.azurewebsites.net/api/get-events', {timeout: 10 * 1000}).then((body)=>{
-        console.log("body of api call", body.data)
-        state.events = body.data
-        setState(JSON.parse(JSON.stringify(state)))
-      })
-      axios.delete('https://fsdc18.azurewebsites.net/api/delete-all-events', {timeout: 10 * 1000}).then((response)=>{
-        console.log("delete response", response)
-      })
-
-    }, []
-    )
 
 
     /*api call will go here under a call using the useEffect hook 

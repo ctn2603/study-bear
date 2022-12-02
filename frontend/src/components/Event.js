@@ -10,18 +10,22 @@ const Event = ({ item }) => {
     state.eventDataId = item.id
     setState(JSON.parse(JSON.stringify(state)))
     console.log(state.eventDataId)
+
   }
 
   return (
       <Box margin={10} h="16vh" w="30vw" bg='#FFFFFF' borderRadius="15px" ml='20' style={{'box-shadow': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'}}>
         <Text fontSize='18' textAlign="left" marginLeft={15} mb='0' pt='7' fontFamily="Futura">
-          {item.title}
+          {item.title} • {item.capacity - item.currCap} spots open
         </Text>
         <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
-          {item.time}
+          now - {item.time}
+        </Text>
+        <Text fontSize='16' textAlign="left" marginLeft={15} mb='0'fontFamily="Futura">
+          {item.location}
         </Text>
         <Text fontSize='16' textAlign="left" marginLeft={15} mb='0' fontFamily="Futura">
-          {item.location}  * {item.capacity - item.currCap} spots open
+          
         </Text>
         <Box textAlign='left' fontFamily='Futura' mt='5'>
           <Link to='/eventData' style={{textDecoration:'none'}}><Box

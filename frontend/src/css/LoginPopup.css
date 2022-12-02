@@ -36,3 +36,42 @@
   border: 1px solid #999;
   font-size: 20px;
 }
+
+
+button {
+  border: 0px;
+  padding: 8px;
+}
+
+#loginButton {
+  background-color: white;
+  color: #0327d6;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  border-radius: 0px;
+  border-width: 0px;
+}
+
+#submitFormButton {
+  background-color: #0327d6;
+    color: white;
+    margin-left: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    border-radius: 0px;
+    border-radius: 0px;
+    border-width: 0px;
+    width: 70px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    
+}
+
+#submitFormButton:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.text {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: black;
+  margin-bottom: 10px;
+}

@@ -3,7 +3,7 @@ import GMap from './GoogleMap'
 import { Box, Text, Flex} from '@chakra-ui/react'
 import { StateContext } from '../App'
 import { Link } from 'react-router-dom'
-import { PlusSquareIcon } from '@chakra-ui/icons'
+import { PlusSquareIcon, AddIcon } from '@chakra-ui/icons'
 
 const EventContext = createContext(null)
 
@@ -27,10 +27,10 @@ function MapContainer({height, width}) {
         var infoEvent = state.events[state.infoBoxId]
         console.log('heeerreee')
         return (
-            <Box borderRadius='5' p='7' bg='#e3c3c3' style={boxStyle}>
-                <Text m='0' fontSize='14' bg='#3489eb' p='4' borderRadius='10'> {infoEvent.title}</Text>
-                <Text m='1' fontSize='10' bg='#39a2bd' p='3' borderRadius='8'> {infoEvent.time}</Text>
-                <Text m='0' fontSize='10' bg='#db307d' p='3' borderRadius='8'>{infoEvent.capacity}</Text>
+            <Box borderRadius='5' p='7' bg='#0327D6' style={boxStyle} color='black'>
+                <Text m='2' mb='3' fontSize='14' bg='white' p='4' borderRadius='10'> {infoEvent.title}</Text>
+                <Text m='2' mt='3' mb='3' fontSize='10' bg='white' p='2' borderRadius='8'> now - {infoEvent.time}</Text>
+                <Text m='2' mt='3' fontSize='10' bg='white' p='2'  borderRadius='8'>Capacity: {infoEvent.currCap} / {infoEvent.capacity}</Text>
             </Box>
         )
     }
@@ -40,8 +40,8 @@ function MapContainer({height, width}) {
 
             <Box style={{position:'absolute', zIndex:'999', top:'84%', right:'88%'}}>
                 <Flex mt='5'>
-                    <Link to='/addEvent'>
-                        <PlusSquareIcon ml='20' bg='#F9FB03' p='0' color='#0327D6' h='70' w='70' />
+                    <Link to='/addEvent' style={{'text-decoration':'none'}}>
+                        <AddIcon h='70' w='70' bg='#F9FB03' color='#0E26CD' p='15'/>
                     </Link>
                 </Flex>
             </Box>
