@@ -1,4 +1,4 @@
-# fullstack-final-project
+# Study Bear
 
 Figma Design:
 https://www.figma.com/file/tMU21jEN1MlKDjubuZ2kIF/full-stack-decal-final-project?node-id=0%3A1
